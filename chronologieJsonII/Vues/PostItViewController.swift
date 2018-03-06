@@ -17,7 +17,7 @@ class PostItViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        addLabels()
+        //addLabels()
     }
 
     override func didReceiveMemoryWarning() {
