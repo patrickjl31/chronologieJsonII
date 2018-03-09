@@ -45,12 +45,12 @@ class EvenementBoxView: UIView {
         self.addSubview(ui_date)
         
         
-        let tap = UITapGestureRecognizer(target: self, action: #selector(self.handleTap(_:)))
+        //let tap = UITapGestureRecognizer(target: self, action: #selector(self.handleTap(_:)))
         
         
-        self.addGestureRecognizer(tap)
+        //self.addGestureRecognizer(tap)
         
-        self.isUserInteractionEnabled = true
+        //self.isUserInteractionEnabled = true
         
         //self.addSubview(view)
         
@@ -58,26 +58,38 @@ class EvenementBoxView: UIView {
     }
     
     // function which is triggered when handleTap is called
-    /*   */
+    /*
     @objc func handleTap(_ sender: UITapGestureRecognizer) {
         print("Hello World")
         //let detailEvtCntroller = UIStoryboard.
-        //let vc:detailEvenementViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "DetailEvenementVC") as! detailEvenementViewController
-        //self.p
-        //let vc = mainStoryboard.instantiateViewController(withIdentifier: "DetailEvenementVC")
-        //self.showViewController(vc as! detailEvenementViewController, sender: self)
+        /*
+        let postVC = 
+        
+        
+        postVC.modalPresentationStyle = .popover
+        let pvc = postVC.popoverPresentationController
+        pvc?.delegate = (self as! UIPopoverPresentationControllerDelegate)
+        pvc?.permittedArrowDirections = .any
+        pvc?.sourceView = sender
+        pvc?.sourceRect = CGRect(x: sender.bounds.origin.x + 100, y: sender.bounds.origin.y, width: 100, height: 100)//sender.bounds
+        
+        postVC.preferredContentSize = CGSize(width: 200, height: 200)
+        present(postVC, animated: true, completion: nil)
+        
+        */
+        /*
         let vc = PostItViewController()
         vc.comment.text = commentaire
         vc.commentaire = commentaire
         vc.modalPresentationStyle = .popover
-        /*
+        
         present(vc, animated: true, completion: nil)
         vc.popoverPresentationController?.sourceView = view
         vc.popoverPresentationController?.sourceRect = sender.frame
  
    */
     }
- 
+ */
 
     /*
     // Only override draw() if you perform custom drawing.

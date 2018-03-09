@@ -11,44 +11,36 @@ import UIKit
 class PostItViewController: UIViewController {
     
     var commentaire: String = ""
-    var comment = UILabel()
-
+    //var comment = UILabel()
+    @IBOutlet weak var comment: UITextView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         //addLabels()
+        comment.text = commentaire
+        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    @IBAction func quitter(_ sender: UIButton) {
+        dismiss(animated: true, completion: nil)
+    }
     
     func  addLabels()  {
-        self.view.backgroundColor = UIColor.yellow
+        //self.view.backgroundColor = UIColor.yellow
         //self.view.layer.cornerRadius = CGFloat(5)
         self.view.layer.borderWidth = 1.0
         self.view.layer.borderColor = UIColor.gray.cgColor
         
-        comment.frame = CGRect(x: 5, y: 5, width: self.view.frame.width - 10, height: self.view.frame.width - 40)
-        //comment.backgroundColor = UIColor.black
-        
-        self.view.addSubview(comment)
-        
-        
-        
-        
-        //let tap = UITapGestureRecognizer(target: self, action: #selector(self.handleTap(_:)))
-        
-        
-        //self.addGestureRecognizer(tap)
-        
-        //self.isUserInteractionEnabled = true
-        
-        //self.addSubview(view)
-        
-        
+        //comment.frame = CGRect(x: 5, y: 5, width: self.view.frame.width - 10, height: self.view.frame.width - 40)
+        //comment.backgroundColor = UIColor.black 
+        //self.view.addSubview(comment)
+      
     }
     
 

@@ -14,7 +14,7 @@ struct Box {
     var ligne:UIView
 }
 
-class VueEvtPonctuelsViewController: UIViewController {
+class VueEvtPonctuelsViewController: UIViewController, UIPopoverPresentationControllerDelegate {
     
     // Les variables transférées
     // MaChrono a déjà été filtrée
@@ -220,7 +220,7 @@ class VueEvtPonctuelsViewController: UIViewController {
                 }
             }
         } while !fini
-        print("fonction externe : courant : \(curLevel), optimal: \(optimalLevel)")
+        //print("fonction externe : courant : \(curLevel), optimal: \(optimalLevel)")
         niveau = curLevel
         return niveau
     }
@@ -240,7 +240,7 @@ class VueEvtPonctuelsViewController: UIViewController {
         dansBox.box.isHidden = false
         dansBox.ligne.isHidden = false
         // Trace
-        print("\(formatter.string(from: unEvt.dateDeb)) : \(unEvt.intitule), en \(xEvt)")
+        //print("\(formatter.string(from: unEvt.dateDeb)) : \(unEvt.intitule), en \(xEvt)")
     }
 
     // Test graphique
@@ -381,6 +381,12 @@ class VueEvtPonctuelsViewController: UIViewController {
             
             for i in tailleEvenementViewsFree ..< nombreEvenements {
                 let nouvelleVue = EvenementBoxView(frame: CGRect(x: 0, y: 0, width: L_EVT, height: H_EVT))
+                //let nouvelleVue = EvenementBoxViewController()
+                //On crée une gesture
+                let gesture = UITapGestureRecognizer(target: self, action:  #selector(self.checkAction))
+                // On l'associe à la boite
+                nouvelleVue.addGestureRecognizer(gesture)
+                // On crée le vue étroite qui sevira de ligne de la boite à la flèche
                 let nouvelleLigne = UIView(frame: CGRect(x: 0, y: 0, width: 2, height: 10))
                 nouvelleLigne.backgroundColor = UIColor.black
                 //nouvelleLigne.layer.borderWidth = 2.0
@@ -416,6 +422,35 @@ class VueEvtPonctuelsViewController: UIViewController {
         dateformater.dateFormat = "dd/MM/yyyy"
         dateformater.dateStyle = .full
         return dateformater.string(from: date)
+    }
+    
+    // -----------------
+    //l'ouverture du post it lorsqu'on touche une box
+    @objc func checkAction(sender : UITapGestureRecognizer) {
+        // Do what you want
+        //print("touche")
+        ouvrirPop(sender.view)
+    }
+    
+    func ouvrirPop(_ sender: Any) {
+        let postVC = storyboard?.instantiateViewController(withIdentifier: "postit") as! PostItViewController
+        // On passe les valeurs
+        let laBoite = sender as! EvenementBoxView
+        let leCommentaire = laBoite.commentaire
+        postVC.commentaire = leCommentaire
+        
+        
+        postVC.modalPresentationStyle = .popover
+        let pvc = postVC.popoverPresentationController
+        pvc?.delegate = (self as! UIPopoverPresentationControllerDelegate)
+        pvc?.permittedArrowDirections = .any
+        pvc?.sourceView = sender as! UIView
+        pvc?.sourceRect = CGRect(x: (sender as AnyObject).bounds.origin.x , y: (sender as AnyObject).bounds.origin.y, width: 100, height: 100)//sender.bounds
+        
+        postVC.preferredContentSize = CGSize(width: 200, height: 200)
+        present(postVC, animated: true, completion: nil)
+        
+        
     }
     
 

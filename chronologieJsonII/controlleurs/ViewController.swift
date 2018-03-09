@@ -346,7 +346,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             copyToFriseButton.isHidden = true
         }
         //tableView.deselectRow(at: indexPath, animated: false)
-        print("Déselection de \(indexTable)")
+        //print("Déselection de \(indexTable)")
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -395,10 +395,16 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         if tableView == self.currentTableView {
             if editingStyle == .delete {
                 // On delete dans la table
-                //let badEvt = GlobalVariables.listeEvenements[index]
-                
+                let badEvt = chronos.lesChronologies[chronos.indexChronoCourante].mesEvenements[index]
+                if chronos.indexChronoCourante > -1 {
+                    //chronos.lesChronologies[chronos.indexChronoCourante]
+                    
+                    let laChrono = chronos.deleteEventFromChronologie(unEvenement: badEvt, fromChronologie: chronos.lesChronologies[chronos.indexChronoCourante])
+                    chronos.lesChronologies[chronos.indexChronoCourante] = laChrono
+                }
                 
                 //GlobalVariables.listeEvenements.remove(at: index)
+                self.friseTableView.reloadData()
                 self.currentTableView.reloadData()
             }
             
