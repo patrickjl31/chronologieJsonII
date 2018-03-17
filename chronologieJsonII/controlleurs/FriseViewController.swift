@@ -10,13 +10,55 @@ import UIKit
 
 class FriseViewController: UIViewController {
     
+    @IBOutlet weak var titreFrise: UILabel!
+    
+    
+    
     public var lesChronos: GestionChronologie?
     public var laChrono: [Evenement]?
+    public var monTitre = ""
 
+    
+    @IBOutlet weak var label1: UILabel!
+    @IBOutlet weak var label2: UILabel!
+    @IBOutlet weak var label3: UILabel!
+    @IBOutlet weak var label4: UILabel!
+    @IBOutlet weak var label5: UILabel!
+    @IBOutlet weak var label6: UILabel!
+    @IBOutlet weak var label7: UILabel!
+    @IBOutlet weak var label8: UILabel!
+    @IBOutlet weak var label9: UILabel!
+    @IBOutlet weak var label0: UILabel!
+    
+    
+    var etiquettes : [UILabel] = []
+    
+    var debut = Date()
+    var fin = Date()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+       
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        self.title = monTitre
+        titreFrise.text = monTitre
+        etiquettes = [label0, label1, label2, label3, label4, label5, label6, label7, label8, label9 ]
+        let bornes = datesExtremes(listeEvt: laChrono!)
+        
+        debut = bornes.deb
+        fin = bornes.fin
+        let lesLabels = decoupePeriode(En: 10, depuis: debut, jusqua: fin)
+        for i in 0..<10{
+            etiquettes[i].text = lesLabels[i]
+            etiquettes[i].layer.borderWidth = 1
+            etiquettes[i].layer.borderColor = UIColor.lightGray.cgColor
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -37,30 +79,88 @@ class FriseViewController: UIViewController {
         if segue.identifier == "ponctuels" {
             let vc = segue.destination as! VueEvtPonctuelsViewController
             vc.mesChronos = lesChronos
+            vc.debutTemps = debut
+            vc.finTemps = fin
             
+        }
+        
+        if segue.identifier == "EvtLongs" {
+            let vcl = segue.destination as! VueEvtLongsViewController
+            vcl.mesChronos = lesChronos
+            vcl.debutTemps = debut
+            vcl.finTemps = fin
+        }
+ 
+    }
+    
+    @IBAction func saveToPDF(_ sender: UIButton) {
+        
+    }
+    // gérer l'affichage des postit des événements
+    
+    
+    // renvoie les dates extrèmes de la base
+    func datesExtremes(listeEvt : [Evenement]) -> (deb: Date, fin: Date) {
+        if listeEvt.count > 1 {
+            let debut = listeEvt.first?.dateDeb
+            var fin = debut
+            for evt in listeEvt {
+                if evt.ponctuel {
+                    if evt.dateDeb > fin! {
+                        fin = evt.dateFin
+                    }
+                } else {
+                    if evt.dateFin > fin! {
+                        fin = evt.dateFin
+                    }
+                }
+            }
+            
+            return (debut!, fin!)
+        } else {
+            if listeEvt.count == 1 {
+                if listeEvt[0].ponctuel {
+                    var debut = listeEvt.first!.dateDeb
+                    let dureeAnnee:TimeInterval = 60 * 60 * 24 * 365.24
+                    //let df = DateFormatter()
+                    debut = Date(timeIntervalSince1970: (debut.timeIntervalSince1970 - dureeAnnee))//debut.timeIntervalSince1970 - dureeAnnee
+                    let fin = Date(timeIntervalSince1970: (debut.timeIntervalSince1970 + dureeAnnee + dureeAnnee))
+                    return(debut, fin)
+                } else {
+                    return (listeEvt[0].dateDeb, listeEvt[0].dateFin)
+                }
+            }
+            return (Date(), Date())
         }
     }
     
-    // gérer l'affichage des postit des événements
-    /*
-    @objc func handleTap(_ sender: Any) {
-        print("Hello World")
-        
-        let vc = PostItViewController()
-        vc.comment.text = (sender as! EvenementBoxView).commentaire
-        vc.commentaire = (sender as! EvenementBoxView).commentaire
-        vc.modalPresentationStyle = .popover
-        vc.popoverPresentationController?.delegate = self as! UIPopoverPresentationControllerDelegate
-        vc.popoverPresentationController?.sourceView = sender as! EvenementBoxView
-        self.present(vc, animated: true, completion: nil)
-        
-        /*
-         present(vc, animated: true, completion: nil)
-         vc.popoverPresentationController?.sourceView = view
-         vc.popoverPresentationController?.sourceRect = sender.frame
-         */
-        
+    // Renvoie la liste des dates des EN périodes de la frise
+    // pour indiquer une échelle au lecteur.
+    func decoupePeriode(En:Int, depuis:Date, jusqua:Date) -> [String] {
+        var result:[String] = []
+        var deb = depuis
+        var fin = jusqua
+        if depuis > jusqua {
+            deb = jusqua
+            fin = depuis
+        }
+        let dureeTotale = fin.timeIntervalSince1970 - deb.timeIntervalSince1970
+        let portions = dureeTotale / Double(En)
+        let demiPortion = portions / 2
+        let dureeAnnee:TimeInterval = 60 * 60 * 24 * 365.24
+        let df = DateFormatter()
+        if portions > (dureeAnnee * Double(En) / 2) {
+            df.dateFormat = "yyyy"
+        } else {
+            df.dateFormat = "MMM-yyyy"
+        }
+        for i in 0..<En {
+            let uneDate = deb.timeIntervalSince1970 + (portions * Double(i)) + demiPortion
+            let dateS = df.string(from: Date(timeIntervalSince1970: uneDate))
+            result.append(dateS)
+        }
+        return result
     }
-    */
+
 
 }

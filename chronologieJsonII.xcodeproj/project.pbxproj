@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2A1472A32057C111000C048D /* LongPeriodBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1472A22057C111000C048D /* LongPeriodBoxView.swift */; };
+		2A1472AC205AC7FC000C048D /* VueEvtLongsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1472AB205AC7FC000C048D /* VueEvtLongsViewController.swift */; };
 		2A15476D202A4B6B006F15B4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A15476C202A4B6B006F15B4 /* AppDelegate.swift */; };
 		2A154772202A4B6B006F15B4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A154770202A4B6B006F15B4 /* Main.storyboard */; };
 		2A154774202A4B6B006F15B4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A154773202A4B6B006F15B4 /* Assets.xcassets */; };
@@ -28,6 +30,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2A1472A22057C111000C048D /* LongPeriodBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LongPeriodBoxView.swift; sourceTree = "<group>"; };
+		2A1472AB205AC7FC000C048D /* VueEvtLongsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VueEvtLongsViewController.swift; sourceTree = "<group>"; };
 		2A154769202A4B6B006F15B4 /* chronologieJsonII.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = chronologieJsonII.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A15476C202A4B6B006F15B4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2A154771202A4B6B006F15B4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -118,6 +122,7 @@
 			children = (
 				2A9D440E202B4227004EFD4F /* ViewController.swift */,
 				2A9D4408202B41E5004EFD4F /* FriseViewController.swift */,
+				2A1472AB205AC7FC000C048D /* VueEvtLongsViewController.swift */,
 				2A9D440C202B41F4004EFD4F /* VueEvtPonctuelsViewController.swift */,
 				2A9D440A202B41EC004EFD4F /* NouvelEvenementViewController.swift */,
 			);
@@ -128,6 +133,7 @@
 			isa = PBXGroup;
 			children = (
 				2A9D4410202B4245004EFD4F /* EvenementBoxView.swift */,
+				2A1472A22057C111000C048D /* LongPeriodBoxView.swift */,
 				2A15F79C204E861300E8AFD3 /* EvenementBoxViewController.swift */,
 				2A9D4413202B4266004EFD4F /* VueEvenements.swift */,
 				2A15F79A204DE88100E8AFD3 /* PostItViewController.swift */,
@@ -210,6 +216,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A1472A32057C111000C048D /* LongPeriodBoxView.swift in Sources */,
+				2A1472AC205AC7FC000C048D /* VueEvtLongsViewController.swift in Sources */,
 				2A15F79D204E861300E8AFD3 /* EvenementBoxViewController.swift in Sources */,
 				2A9D4414202B4266004EFD4F /* VueEvenements.swift in Sources */,
 				2A9D440B202B41EC004EFD4F /* NouvelEvenementViewController.swift in Sources */,

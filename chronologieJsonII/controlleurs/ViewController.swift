@@ -70,6 +70,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         // On gère les apprences des boutons
         observeButton.isHidden = true
         copyToFriseButton.isHidden = true
+        voirFiseButton.isHidden = true
+        modifyFrise.isHidden = true
         
     }
     
@@ -178,6 +180,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     @IBAction func VoirFriseGraphique(_ sender: UIButton) {
         //Creer un tableau d'événements ponctuels et un tableau d'événenents longs
+        
         /*
         let indexChrono = chronos.indexChronoCourante
         if indexChrono > -1 {
@@ -329,6 +332,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             //index = indexPath.row
             //chronologieSelected = -1
             indexTable[0] = -1 //typeTables.frise.rawValue
+            // On met à jour l'affichage des boutons
+            voirFiseButton.isHidden = true
+            modifyFrise.isHidden = true
         }
         
         if tableView == self.currentTableView {
@@ -356,9 +362,14 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             indexTable[0] = indexPath.row
             ui_titreFrise.text = chronos.lesChronologies[indexPath.row].intitule
             currentFriseTitle.text = chronos.lesChronologies[indexPath.row].intitule
+            // Par sécurité, on trie la chronologie selectionnée
+            chronos.lesChronologies[indexPath.row].mesEvenements.sort(by: {$0.dateDeb < $1.dateDeb})
             // On met à jour la chronologie courante dans le modèle
             chronos.chronoCourante = chronos.lesChronologies[indexPath.row]
             chronos.indexChronoCourante = index
+            // On montre les boutons
+            voirFiseButton.isHidden = false
+            modifyFrise.isHidden = false
             //changementChronologie(newIndex: index)
             currentTableView.reloadData()
         }
@@ -419,6 +430,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                 // On cache les boutons de la colone
                 copyToFriseButton.isHidden = true
                 observeButton.isHidden = true
+                self.friseTableView.reloadData()
+                self.currentTableView.reloadData()
             }
         }
         //print("\(indexTable)")
@@ -442,9 +455,13 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             let ind_courante = chronos.indexChronoCourante
             if ind_courante > -1 {
                 vc.laChrono = chronos.lesChronologies[ind_courante].mesEvenements
+                vc.monTitre = chronos.lesChronologies[ind_courante].intitule
             } else {
                 vc.laChrono = []
             }
+            
+            vc.view.setNeedsLayout()
+            vc.view.layoutIfNeeded()
             
         }
     }

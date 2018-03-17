@@ -181,11 +181,11 @@ class GestionChronologie: NSObject {
             if let json = String(data: encoded, encoding: .utf8) {
                 //print(json)
                 // enregistrer dans un fichier
-                let fileName = "listchronologies"
+                let fileName = "listchronos"
                 let dir = try? FileManager.default.url(for: .documentDirectory,
                                                        in: .userDomainMask, appropriateFor: nil, create: true)
                 // Si on trouve le directory, on enregistre
-                if let fileURL = dir?.appendingPathComponent(fileName).appendingPathExtension("txt") {
+                if let fileURL = dir?.appendingPathComponent(fileName).appendingPathExtension("json") {
                     do{
                         try json.write(to: fileURL, atomically: true, encoding: .utf8)
                     }catch {
@@ -200,11 +200,11 @@ class GestionChronologie: NSObject {
     func recallChronos() -> [Chronologie] {
         var recall:[Chronologie] = []
         // Récupération depuis un fichier
-        let fileName = "listchronologies"
+        let fileName = "listchronos"
         let dir = try? FileManager.default.url(for: .documentDirectory,
                                                in: .userDomainMask, appropriateFor: nil, create: true)
         // Si on trouve le directory, on lit
-        if let fileURL = dir?.appendingPathComponent(fileName).appendingPathExtension("txt") {
+        if let fileURL = dir?.appendingPathComponent(fileName).appendingPathExtension("json") {
             // On récupère
             do {
                 if  FileManager.default.fileExists(atPath: fileURL.path){
@@ -238,7 +238,7 @@ class GestionChronologie: NSObject {
                 let dir = try? FileManager.default.url(for: .documentDirectory,
                                                        in: .userDomainMask, appropriateFor: nil, create: true)
                 // Si on trouve le directory, on enregistre
-                if let fileURL = dir?.appendingPathComponent(fileName).appendingPathExtension("txt") {
+                if let fileURL = dir?.appendingPathComponent(fileName).appendingPathExtension("json") {
                     do{
                         try json.write(to: fileURL, atomically: true, encoding: .utf8)
                     }catch {
@@ -259,7 +259,7 @@ class GestionChronologie: NSObject {
         let dir = try? FileManager.default.url(for: .documentDirectory,
                                                in: .userDomainMask, appropriateFor: nil, create: true)
         // Si on trouve le directory, on lit
-        if let fileURL = dir?.appendingPathComponent(fileName).appendingPathExtension("txt") {
+        if let fileURL = dir?.appendingPathComponent(fileName).appendingPathExtension("json") {
             // on lit
             //var inString = ""
             do {

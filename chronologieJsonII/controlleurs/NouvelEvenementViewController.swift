@@ -42,8 +42,8 @@ class NouvelEvenementViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var ui_DatePicker: UIDatePicker!
     
     var laDate = Date()
-    var dateDeb = Date()
-    var dateFin = Date()
+    var dateDeb = Date(timeIntervalSince1970: 0)
+    var dateFin = Date(timeIntervalSince1970: 0)
     var datEnCours = "deb"
     var evtPonctuel = true
     
@@ -118,6 +118,7 @@ class NouvelEvenementViewController: UIViewController, UITextFieldDelegate {
         }
         // Si on enregistre une date de fin, l'evt n'est pas ponctuel..
         evtPonctuel = false
+        
         switch  sender.selectedSegmentIndex {
         case 0:
             // Début
@@ -208,6 +209,10 @@ class NouvelEvenementViewController: UIViewController, UITextFieldDelegate {
         } else {
             dateFin = laDate
         }
+        // si l'événement est ponctuel, on égalise des dates de début et de fin
+        if evtPonctuel{
+            dateFin = dateDeb
+        } 
         
         if let titre = ui_titre.text{
             let date = ui_Date.text

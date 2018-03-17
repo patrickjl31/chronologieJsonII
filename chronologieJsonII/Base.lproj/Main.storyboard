@@ -209,18 +209,18 @@
                                     </button>
                                 </subviews>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Z3-Nu-TWU">
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="21" translatesAutoresizingMaskIntoConstraints="NO" id="4Z3-Nu-TWU">
                                 <rect key="frame" x="699" y="205" width="310" height="60"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="To3-pH-OA4">
-                                        <rect key="frame" x="0.0" y="0.0" width="190.5" height="60"/>
-                                        <state key="normal" title="Button" image="Icon-60"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="144.5" height="60"/>
+                                        <state key="normal" image="Icon-60"/>
                                         <connections>
                                             <action selector="addEventToFrise:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Oyj-b6-mHj"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="                           " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zc7-DR-RkP">
-                                        <rect key="frame" x="190.5" y="0.0" width="119.5" height="60"/>
+                                        <rect key="frame" x="165.5" y="0.0" width="144.5" height="60"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -369,22 +369,214 @@
                                     <segue destination="fnx-QQ-8xF" kind="embed" identifier="ponctuels" id="Y7D-tW-NQk"/>
                                 </connections>
                             </containerView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="jla-C8-FSa">
+                                <rect key="frame" x="0.0" y="467" width="1024" height="20.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OuW-Zd-IiU">
+                                        <rect key="frame" x="0.0" y="0.0" width="102.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <integer key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5LO-Vv-OF5">
+                                        <rect key="frame" x="102.5" y="0.0" width="102.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <integer key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2O6-OI-tBa">
+                                        <rect key="frame" x="205" y="0.0" width="102" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <integer key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s6t-Df-2WY">
+                                        <rect key="frame" x="307" y="0.0" width="102.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <integer key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QPM-sb-i5P">
+                                        <rect key="frame" x="409.5" y="0.0" width="102.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <integer key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HSq-P9-p8V">
+                                        <rect key="frame" x="512" y="0.0" width="102.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <integer key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ruB-rI-usb">
+                                        <rect key="frame" x="614.5" y="0.0" width="102.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <integer key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="osB-ou-s9H">
+                                        <rect key="frame" x="717" y="0.0" width="102" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <integer key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oXu-BY-RFj">
+                                        <rect key="frame" x="819" y="0.0" width="102.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <integer key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cXz-Gp-bcY">
+                                        <rect key="frame" x="921.5" y="0.0" width="102.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <integer key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Da8-hg-cbK">
+                                <rect key="frame" x="0.0" y="564" width="1024" height="174"/>
+                                <connections>
+                                    <segue destination="R2p-12-h1R" kind="embed" identifier="EvtLongs" id="fr1-fC-Zu5"/>
+                                </connections>
+                            </containerView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tQy-NU-Rkr">
+                                <rect key="frame" x="904" y="738" width="100" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="yXx-oZ-iyo"/>
+                                </constraints>
+                                <state key="normal" title="Save to PDF"/>
+                                <connections>
+                                    <action selector="saveToPDF:" destination="Vk0-Ac-awh" eventType="touchUpInside" id="hU3-3F-U0k"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Titre" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Su-0g-dYj">
+                                <rect key="frame" x="50" y="698" width="924" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="6Su-0g-dYj" firstAttribute="leading" secondItem="tiW-uY-rbt" secondAttribute="leading" constant="50" id="7oU-G1-rlZ"/>
+                            <constraint firstItem="Da8-hg-cbK" firstAttribute="top" secondItem="5gm-vv-LJS" secondAttribute="bottom" id="7qq-11-F5L"/>
+                            <constraint firstItem="tiW-uY-rbt" firstAttribute="trailing" secondItem="tQy-NU-Rkr" secondAttribute="trailing" constant="20" id="AFm-mp-cac"/>
+                            <constraint firstItem="Da8-hg-cbK" firstAttribute="leading" secondItem="tiW-uY-rbt" secondAttribute="leading" id="HVX-QQ-poR"/>
                             <constraint firstItem="5gm-vv-LJS" firstAttribute="leading" secondItem="tiW-uY-rbt" secondAttribute="leading" id="JcE-9v-NL3"/>
                             <constraint firstItem="tiW-uY-rbt" firstAttribute="trailing" secondItem="ZmN-gu-72d" secondAttribute="trailing" id="Jm0-Qd-Y6y"/>
+                            <constraint firstItem="tiW-uY-rbt" firstAttribute="bottom" secondItem="Da8-hg-cbK" secondAttribute="bottom" constant="30" id="NzH-8b-42F"/>
+                            <constraint firstItem="tiW-uY-rbt" firstAttribute="trailing" secondItem="Da8-hg-cbK" secondAttribute="trailing" id="OQz-IT-yu2"/>
+                            <constraint firstItem="jla-C8-FSa" firstAttribute="leading" secondItem="tiW-uY-rbt" secondAttribute="leading" id="Ogu-4q-E6L"/>
                             <constraint firstItem="tiW-uY-rbt" firstAttribute="bottom" secondItem="qpo-LL-GPT" secondAttribute="bottom" id="UAG-GP-Sot"/>
+                            <constraint firstItem="tiW-uY-rbt" firstAttribute="trailing" secondItem="jla-C8-FSa" secondAttribute="trailing" id="Wyr-bb-Tlg"/>
                             <constraint firstItem="5gm-vv-LJS" firstAttribute="trailing" secondItem="tiW-uY-rbt" secondAttribute="trailing" id="a6w-m3-eIh"/>
                             <constraint firstItem="5gm-vv-LJS" firstAttribute="top" secondItem="ZmN-gu-72d" secondAttribute="bottom" constant="1" id="dNS-p8-Up3"/>
                             <constraint firstItem="qpo-LL-GPT" firstAttribute="leading" secondItem="tiW-uY-rbt" secondAttribute="leading" id="idX-rB-KjR"/>
+                            <constraint firstItem="tQy-NU-Rkr" firstAttribute="bottom" secondItem="tiW-uY-rbt" secondAttribute="bottom" id="k6u-ip-PLn"/>
+                            <constraint firstItem="jla-C8-FSa" firstAttribute="top" secondItem="ZmN-gu-72d" secondAttribute="bottom" constant="3" id="kTs-Vo-A9N"/>
                             <constraint firstItem="qpo-LL-GPT" firstAttribute="trailing" secondItem="tiW-uY-rbt" secondAttribute="trailing" id="mhB-Cq-ihJ"/>
                             <constraint firstItem="qpo-LL-GPT" firstAttribute="top" secondItem="tiW-uY-rbt" secondAttribute="top" id="nls-Zp-52j"/>
+                            <constraint firstItem="tiW-uY-rbt" firstAttribute="bottom" secondItem="6Su-0g-dYj" secondAttribute="bottom" constant="40" id="rzy-EB-96W"/>
                             <constraint firstItem="ZmN-gu-72d" firstAttribute="leading" secondItem="tiW-uY-rbt" secondAttribute="leading" id="uUs-CC-gyR"/>
+                            <constraint firstItem="tiW-uY-rbt" firstAttribute="trailing" secondItem="6Su-0g-dYj" secondAttribute="trailing" constant="50" id="wx5-Ju-1pi"/>
                             <constraint firstItem="ZmN-gu-72d" firstAttribute="top" secondItem="tiW-uY-rbt" secondAttribute="top" id="xdj-BC-Qvb"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="tiW-uY-rbt"/>
                     </view>
+                    <connections>
+                        <outlet property="label0" destination="OuW-Zd-IiU" id="U2E-wA-vBx"/>
+                        <outlet property="label1" destination="5LO-Vv-OF5" id="MNw-Ad-1GZ"/>
+                        <outlet property="label2" destination="2O6-OI-tBa" id="uVc-fZ-8X7"/>
+                        <outlet property="label3" destination="s6t-Df-2WY" id="eu2-qQ-cP1"/>
+                        <outlet property="label4" destination="QPM-sb-i5P" id="tMr-ry-wo9"/>
+                        <outlet property="label5" destination="HSq-P9-p8V" id="LkM-Qr-d93"/>
+                        <outlet property="label6" destination="ruB-rI-usb" id="Vo1-pW-MNC"/>
+                        <outlet property="label7" destination="osB-ou-s9H" id="usk-de-Jh1"/>
+                        <outlet property="label8" destination="oXu-BY-RFj" id="Gbf-te-l2Y"/>
+                        <outlet property="label9" destination="cXz-Gp-bcY" id="pjp-3j-YGd"/>
+                        <outlet property="titreFrise" destination="6Su-0g-dYj" id="TM3-xD-G3V"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3t4-Iz-vhs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -654,7 +846,20 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zbB-1t-a1A" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="799" y="1448"/>
+            <point key="canvasLocation" x="879" y="1366"/>
+        </scene>
+        <!--Vue Evt Longs View Controller-->
+        <scene sceneID="ZRO-sW-C0D">
+            <objects>
+                <viewController id="R2p-12-h1R" customClass="VueEvtLongsViewController" customModule="chronologieJsonII" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="kNA-CP-ll6">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="174"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jHH-T6-VgT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-376" y="2092"/>
         </scene>
     </scenes>
     <resources>
