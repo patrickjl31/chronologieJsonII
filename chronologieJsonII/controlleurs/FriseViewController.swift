@@ -12,6 +12,7 @@ class FriseViewController: UIViewController {
     
     @IBOutlet weak var titreFrise: UILabel!
     
+    @IBOutlet weak var saveToPdfButton: UIButton!
     
     
     public var lesChronos: GestionChronologie?
@@ -41,8 +42,23 @@ class FriseViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-       
+        let envoyer = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(sendPDF))
         
+        navigationItem.rightBarButtonItem = envoyer
+    }
+    @objc func sendPDF()  {
+        //print("J'envoie le PDF)")
+        let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
+        var path = paths[0] as String
+        path = path + "/default.pdf"
+        if !FileManager.default.fileExists(atPath: path){
+            // On sauve
+            let monPath = createPdfFromView(aView: self.view, saveToDocumentsWithFileName: "default.pdf")
+        }
+        let url = NSURL(fileURLWithPath: path)
+        let controller = UIActivityViewController(activityItems: [url], applicationActivities: nil)
+        controller.popoverPresentationController?.sourceView = self.view
+        self.present(controller, animated: true, completion: nil)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -94,7 +110,12 @@ class FriseViewController: UIViewController {
     }
     
     @IBAction func saveToPDF(_ sender: UIButton) {
-        
+        // On cache le bouton
+        saveToPdfButton.isHidden = true
+        // On sauve
+        let monPath = createPdfFromView(aView: self.view, saveToDocumentsWithFileName: "default.pdf")
+        // On rend le bouton à nouveau visible
+        saveToPdfButton.isHidden = false
     }
     // gérer l'affichage des postit des événements
     
@@ -161,6 +182,32 @@ class FriseViewController: UIViewController {
         }
         return result
     }
+    
+    
+    //----------------------------------------------
+    // ----- Transformer la vue en PDF
+    // appel :     monPath = createPdfFromView(aView: self.view, saveToDocumentsWithFileName: "default.pdf")
+    // --- To PDF
+    func createPdfFromView(aView: UIView, saveToDocumentsWithFileName fileName: String)->String
+    {
+        let pdfData = NSMutableData()
+        UIGraphicsBeginPDFContextToData(pdfData, aView.bounds, nil)
+        UIGraphicsBeginPDFPage()
+        
+        guard let pdfContext = UIGraphicsGetCurrentContext() else { return "echec1"}
+        
+        aView.layer.render(in: pdfContext)
+        UIGraphicsEndPDFContext()
+        
+        if let documentDirectories = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first {
+            let documentsFileName = documentDirectories + "/" + fileName
+            debugPrint(documentsFileName)
+            pdfData.write(toFile: documentsFileName, atomically: true)
+            return documentsFileName
+        }
+        return "echec2"
+    }
+    
 
 
 }

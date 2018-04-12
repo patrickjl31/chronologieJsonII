@@ -62,7 +62,7 @@ class EvenementBoxViewController: UIViewController, UIPopoverPresentationControl
     
     // function which is triggered when handleTap is called
     @objc func handleTap(_ sender: UITapGestureRecognizer) {
-        print("Hello World")
+        //print("Hello World")
         /*
         let postVC = storyboard?.instantiateViewController(withIdentifier: "postit")
             

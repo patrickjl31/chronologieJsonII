@@ -19,7 +19,7 @@ class VueEvtLongsViewController: UIViewController, UIPopoverPresentationControll
     //Taille frise contiendra la ytaille temporelle de la frise
     var tailleFrise:Double = 0
     // Taille mini d'un evenement long
-    let RAPPORT_TAILLE_MINI_DUREE_TOTALE = 0.1
+    let RAPPORT_TAILLE_MINI_DUREE_TOTALE = 0.05
     
     private var chronoCourante: Chronologie?
     // Les événements de la chronologie courante

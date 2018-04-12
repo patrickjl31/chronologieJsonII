@@ -41,6 +41,8 @@
 		2A15477E202A4BD6006F15B4 /* fleche2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fleche2.png; sourceTree = "<group>"; };
 		2A15F79A204DE88100E8AFD3 /* PostItViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostItViewController.swift; sourceTree = "<group>"; };
 		2A15F79C204E861300E8AFD3 /* EvenementBoxViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EvenementBoxViewController.swift; sourceTree = "<group>"; };
+		2A2FFED7207F4DFB0085AD8C /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Main.strings; sourceTree = "<group>"; };
+		2A2FFED8207F4DFB0085AD8C /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		2A6D1469205272D8001BA1BD /* orange-inv.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "orange-inv.jpg"; sourceTree = "<group>"; };
 		2A6D146B205272E0001BA1BD /* orange.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = orange.jpg; sourceTree = "<group>"; };
 		2A9D4402202B41B4004EFD4F /* GestionChronologie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GestionChronologie.swift; sourceTree = "<group>"; };
@@ -89,8 +91,8 @@
 				2A9D4401202B417E004EFD4F /* controlleurs */,
 				2A9D4412202B4256004EFD4F /* Vues */,
 				2A154780202A4BDF006F15B4 /* images */,
-				2A154770202A4B6B006F15B4 /* Main.storyboard */,
 				2A154773202A4B6B006F15B4 /* Assets.xcassets */,
+				2A154770202A4B6B006F15B4 /* Main.storyboard */,
 				2A154775202A4B6B006F15B4 /* LaunchScreen.storyboard */,
 				2A154778202A4B6B006F15B4 /* Info.plist */,
 			);
@@ -240,6 +242,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				2A154771202A4B6B006F15B4 /* Base */,
+				2A2FFED7207F4DFB0085AD8C /* fr */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -248,6 +251,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				2A154776202A4B6B006F15B4 /* Base */,
+				2A2FFED8207F4DFB0085AD8C /* fr */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -259,6 +263,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -316,6 +321,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

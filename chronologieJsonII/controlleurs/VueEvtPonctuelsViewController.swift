@@ -26,7 +26,7 @@ class VueEvtPonctuelsViewController: UIViewController, UIPopoverPresentationCont
     //Taille frise contiendra la ytaille temporelle de la frise
     var tailleFrise:Double = 0
     // Taille mini d'un evenement long
-    let RAPPORT_TAILLE_MINI_DUREE_TOTALE = 0.1
+    let RAPPORT_TAILLE_MINI_DUREE_TOTALE = 0.05
     
     private var chronoCourante: Chronologie?
     // Les événements de la chronologie courante
@@ -205,7 +205,14 @@ class VueEvtPonctuelsViewController: UIViewController, UIPopoverPresentationCont
         dansBox.box.ui_leNom.text = unEvt.intitule
         let formatter = DateFormatter()
         formatter.dateFormat = "dd-MMM-YYYY"
-        dansBox.box.ui_date.text = "\(formatter.string(from: unEvt.dateDeb))"
+        var dates = "\(formatter.string(from: unEvt.dateDeb))"
+        // Les evenements brefs ne sont pas réellement poctuels, il faut afficher les bornes
+        if !unEvt.ponctuel {
+            let fin = "\(formatter.string(from: unEvt.dateFin))"
+            let inter = " to "
+            dates = dates + inter + fin
+        }
+        dansBox.box.ui_date.text = dates
         dansBox.box.commentaire = unEvt.commentaire
         dansBox.box.center = CGPoint(x: xEvt, y: yEvt)
         dansBox.ligne.frame = CGRect(x: xEvt-1, y: yBase, width: 3, height: yArr - yBase)

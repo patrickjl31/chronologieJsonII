@@ -228,7 +228,7 @@ class NouvelEvenementViewController: UIViewController, UITextFieldDelegate {
             // On trie
             chronologies?.lesEvenements.sort(by: {$0.dateDeb < $1.dateDeb})
             // On enregistre
-            chronologies?.saveData()
+            chronologies?.saveData(inFile: "")
             // On recharge sur le viewController
             instanceOfViewController.eventTableView.reloadData()
             // On quitte

@@ -46,9 +46,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        // On ouvre les fichiers
-        chronos.openEvents()
-        chronos.openChronologies()
+        
+        // On ouvre les fichiers directement à l'initialisation de chronos
+        //chronos.openEvents()
+        //chronos.openChronologies()
         
         // On gère les tables
         friseTableView.dataSource = self
@@ -72,6 +73,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         copyToFriseButton.isHidden = true
         voirFiseButton.isHidden = true
         modifyFrise.isHidden = true
+        // et des labels
+        currentFriseTitle.text = ""
         
     }
     
@@ -79,6 +82,13 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         friseTableView.reloadData()
         currentTableView.reloadData()
         eventTableView.reloadData()
+        // On gère les apprences des boutons
+        observeButton.isHidden = true
+        copyToFriseButton.isHidden = true
+        voirFiseButton.isHidden = true
+        modifyFrise.isHidden = true
+        // et des labels
+        currentFriseTitle.text = ""
     }
     override func viewWillAppear(_ animated: Bool) {
         friseTableView.reloadData()
@@ -127,7 +137,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     // MARK : le tableau des événements ---------
     // Les actions des boutons
     @IBAction func saveEvents(_ sender: UIButton) {
-         chronos.saveData()
+         chronos.saveData(inFile: "")
     }
     
    
@@ -167,7 +177,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                 let nchrono = chronos.addEventToChronologie(unEvenement: evt, chrono: chronos.lesChronologies[chronos.indexChronoCourante])
                 chronos.lesChronologies[chronos.indexChronoCourante] = nchrono
                 // On sauvegarde les frises
-                chronos.saveChronologies()
+                chronos.saveChronologies(inFile: "")
                 // On met la table à jour
                 currentTableView.reloadData()
                 friseTableView.reloadData()

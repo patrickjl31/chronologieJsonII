@@ -15,11 +15,30 @@ class GestionChronologie: NSObject {
     var chronoCourante:Chronologie?
     var indexChronoCourante = -1
     
-    func openEvents() {
-        _ = recallData()
+    // ---------------------
+    // le préfixe des noms de fichier courants
+    
+    var currentWorkFileName = ""
+    
+    override init() {
+        super.init()
+        currentWorkFileName = self.getCurrentFileName()
+        
+        //openEvents(dansFile: currentWorkFileName)
+        //openChronologies(inFile: currentWorkFileName)
+        openFiles()
     }
-    func openChronologies()  {
-        lesChronologies = recallChronos()
+    
+    //Ouvre les fichiers de la base courante
+    func openFiles()  {
+        openEvents(dansFile: "")
+        openChronologies(inFile: "")
+    }
+    func openEvents(dansFile:String) {
+        _ = recallData(inFile: dansFile)
+    }
+    func openChronologies(inFile: String)  {
+        lesChronologies = recallChronos(inFile: inFile)
     }
     
     // MARK: Gérer les événements--------------------
@@ -52,7 +71,7 @@ class GestionChronologie: NSObject {
             return false
         } else {
             lesEvenements.append(unEvent)
-            saveData()
+            saveData(inFile: "")
             return true
         }
     }
@@ -68,7 +87,7 @@ class GestionChronologie: NSObject {
                 existantEvt.typeLongTerme = longTerme
                 existantEvt.ponctuel = ponct
                 // On enregistre
-                saveData()
+                saveData(inFile: "")
             }
         }
     }
@@ -83,7 +102,7 @@ class GestionChronologie: NSObject {
         if trouve > -1 {
             removeFromChronologies(event: evt)
             lesEvenements.remove(at: trouve)
-            saveData()
+            saveData(inFile: "")
         }
     }
     
@@ -108,7 +127,7 @@ class GestionChronologie: NSObject {
                 newChrono.mesEvenements = []
                 lesChronologies.append(newChrono)
                 //lesChronologies.sort(by: {$0.intitule < $1.intitule})
-                saveChronologies()
+                saveChronologies(inFile: "")
             }
         }
     }
@@ -174,14 +193,21 @@ class GestionChronologie: NSObject {
     // MARK: Gestion des enregistrements de données --------------------------------------
     //----- Gestion des enregistrements de données---
     //Sauvegarder les chronologies(lesChronologies)
-    func saveChronologies()  {
+    func saveChronologies(inFile:String)  {
         // Save lesEvenements in userdefault
         let encoder = JSONEncoder()
         if let encoded = try? encoder.encode(lesChronologies) {
             if let json = String(data: encoded, encoding: .utf8) {
                 //print(json)
                 // enregistrer dans un fichier
-                let fileName = "listchronos"
+                //var prefix = inFile
+                var fileName = ""
+                if inFile.count > 0 {
+                    fileName = inFile + "." + "listchronos"
+                } else {
+                    fileName = "listchronos"
+                }
+                
                 let dir = try? FileManager.default.url(for: .documentDirectory,
                                                        in: .userDomainMask, appropriateFor: nil, create: true)
                 // Si on trouve le directory, on enregistre
@@ -197,10 +223,16 @@ class GestionChronologie: NSObject {
         }
     }
     
-    func recallChronos() -> [Chronologie] {
+    func recallChronos(inFile:String) -> [Chronologie] {
         var recall:[Chronologie] = []
         // Récupération depuis un fichier
-        let fileName = "listchronos"
+        //let fileName = "listchronos"$
+        var fileName = ""
+        if inFile.count > 0 {
+            fileName = inFile + "." + "listchronos"
+        } else {
+            fileName = "listchronos"
+        }
         let dir = try? FileManager.default.url(for: .documentDirectory,
                                                in: .userDomainMask, appropriateFor: nil, create: true)
         // Si on trouve le directory, on lit
@@ -226,7 +258,7 @@ class GestionChronologie: NSObject {
     }
     
     // MARK: Sauvegarder l'état actuel de la collecte des événements(lesEvenements)
-    func saveData()  {
+    func saveData(inFile:String)  {
         // Save lesEvenements in userdefault
         
         let encoder = JSONEncoder()
@@ -234,7 +266,13 @@ class GestionChronologie: NSObject {
             if let json = String(data: encoded, encoding: .utf8) {
                 //print(json)
                 // enregistrer dans un fichier
-                let fileName = "totalevents"
+                var fileName = ""
+                if inFile.count > 0 {
+                    fileName = inFile + "." + "totalevents"
+                } else {
+                    fileName = "totalevents"
+                }
+                
                 let dir = try? FileManager.default.url(for: .documentDirectory,
                                                        in: .userDomainMask, appropriateFor: nil, create: true)
                 // Si on trouve le directory, on enregistre
@@ -251,11 +289,18 @@ class GestionChronologie: NSObject {
     }
     
     // MARK : Récupérer les événements et les mettre dans lesEvenements
-    func recallData()->Bool {
+    func recallData(inFile:String)->Bool {
         // recall data
         var resultat = false
         // Récupération depuis un fichier
-        let fileName = "totalevents"
+        //let fileName = "totalevents"
+        var fileName = ""
+        if inFile.count > 0 {
+            fileName = inFile + "." + "totalevents"
+        } else {
+            fileName = "totalevents"
+        }
+        
         let dir = try? FileManager.default.url(for: .documentDirectory,
                                                in: .userDomainMask, appropriateFor: nil, create: true)
         // Si on trouve le directory, on lit
@@ -269,7 +314,12 @@ class GestionChronologie: NSObject {
                 }
                 let decoder = JSONDecoder()
                 let mt = try? decoder.decode([Evenement].self, from: data)
-                
+                /*
+                guard let mt = try? decoder.decode([Evenement].self, from: data) else {
+                    lesEvenements = []
+                    return resultat
+                }
+                */
                 lesEvenements = mt!
                 //print("mémoire total : \(memoireTotale)")
                 resultat = true
@@ -281,6 +331,43 @@ class GestionChronologie: NSObject {
         }
         return resultat
     }
+    
+    //-------------------------------
+    //------ gestion des fichiers multiple
+    //-------enregistrer sous, ou récuperation d'une autre base
+    //------------------------------------
+    // File save sauvegarde  sous un nom particulier
+    func filesSave() {
+        if currentWorkFileName.count > 0 {
+            saveData(inFile: currentWorkFileName)
+            saveChronologies(inFile: currentWorkFileName)
+        }
+    }
+    // Open ouvre une base préfixée de currentFileName
+    func filesOpen() {
+        if currentWorkFileName.count > 0 {
+            openEvents(dansFile: currentWorkFileName)
+            openChronologies(inFile: currentWorkFileName)
+        }
+    }
+    //
+    
+    
+    //--------------------------------------
+    //------- récupérer le nom par défaut stocké dans userdefault
+    //---------------------------------------
+    func getCurrentFileName() -> String {
+        let fileName = UserDefaults.standard.object(forKey: "WorkFileName")
+        if let result = fileName as? String {
+            return result
+        } else {
+            return ""
+        }
+    }
+    func setCurrentFileName(to: String)  {
+        UserDefaults.standard.set(to, forKey: "WorkFileName")
+    }
+    
     
 
 }
