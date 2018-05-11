@@ -19,7 +19,7 @@ class VueEvtLongsViewController: UIViewController, UIPopoverPresentationControll
     //Taille frise contiendra la ytaille temporelle de la frise
     var tailleFrise:Double = 0
     // Taille mini d'un evenement long
-    let RAPPORT_TAILLE_MINI_DUREE_TOTALE = 0.05
+    let RAPPORT_TAILLE_MINI_DUREE_TOTALE = 0.03
     
     private var chronoCourante: Chronologie?
     // Les événements de la chronologie courante
@@ -28,7 +28,9 @@ class VueEvtLongsViewController: UIViewController, UIPopoverPresentationControll
     
     // La taille des boites evenement
     //let L_EVT: CGFloat = 100.0
-    let H_EVT: CGFloat = 100.0
+    let H_EVT: CGFloat = 55.0
+    
+    
     
     // marge basse
     //let MARGE_BASSE:CGFloat = 20
@@ -101,7 +103,7 @@ class VueEvtLongsViewController: UIViewController, UIPopoverPresentationControll
     func  afficheLongBoxes(listeEvt:[Evenement])  {
         // Longueur et hauteur de la vue
         let LView = self.view.frame.width
-        let HView:CGFloat = self.view.frame.height
+        //let HView:CGFloat = self.view.frame.height
         // On positionne les vues evenement par leur centre
         let DebUtile: CGFloat = 10//(L_EVT / 2) + 10 //L_EVT / 2
         //let Milieu:CGFloat = LView / 2
@@ -123,19 +125,28 @@ class VueEvtLongsViewController: UIViewController, UIPopoverPresentationControll
         // curLevel permet de balayer les niveaux
         //var curLevel = 0
         
+        // On trie par longueur d'evt
+        let listeEvtTriee = listeEvt.sorted { dureeEvenement(evt: $0) > dureeEvenement(evt: $1)}
+        
         let amplitudeTemps =  Double((finTemps?.timeIntervalSince1970)! - (debutTemps?.timeIntervalSince1970)!)
         let amplitudeFrise = FinUtile - DebUtile
-        let rapportTempsFrise = amplitudeTemps / Double(amplitudeFrise)
+        //let rapportTempsFrise = amplitudeTemps / Double(amplitudeFrise)
         //let debTemps = listeEvt[0].dateDeb.timeIntervalSince1970
         let debTemps = debutTemps?.timeIntervalSince1970
         // Pour calculer l'étage d'affichage de la boite
+        var tabNiv: [Int] = []
         
-        for laBox in 0..<(listeEvt.count) {
-            let tailleBox = CGFloat(listeEvt[laBox].dateFin.timeIntervalSince1970 - listeEvt[laBox].dateDeb.timeIntervalSince1970)  / CGFloat(amplitudeTemps) * amplitudeFrise
-            let milieuBox =  (listeEvt[laBox].dateFin.timeIntervalSince1970 + listeEvt[laBox].dateDeb.timeIntervalSince1970) / 2
+        for laBox in 0..<(listeEvtTriee.count) {
+            let tailleBox = CGFloat(listeEvtTriee[laBox].dateFin.timeIntervalSince1970 - listeEvtTriee[laBox].dateDeb.timeIntervalSince1970)  / CGFloat(amplitudeTemps) * amplitudeFrise
+            let milieuBox =  (listeEvtTriee[laBox].dateFin.timeIntervalSince1970 + listeEvtTriee[laBox].dateDeb.timeIntervalSince1970) / 2
             let posX = (CGFloat((milieuBox - debTemps! ) / amplitudeTemps) * amplitudeFrise) + DebUtile
+            // On calcule le niveau d'affichage
             
-            affiche1LongBox(unEvt: listeEvt[laBox], dansBox: evenementViewsFree[laBox], xEvt: posX, largeur: tailleBox)
+            let niveau = calculerNiveau(evt: listeEvtTriee[laBox], dans: listeEvtTriee, jusquA: laBox, tabNiv: tabNiv)
+            tabNiv.append(niveau)
+            
+            //let niveau = 0
+            affiche1LongBox(unEvt: listeEvt[laBox], dansBox: evenementViewsFree[laBox], xEvt: posX, largeur: tailleBox, auNiveau: niveau)
         }
         
     }
@@ -143,19 +154,23 @@ class VueEvtLongsViewController: UIViewController, UIPopoverPresentationControll
     // ----Afficher une boite ----------------
     // Affiche une boite et son lien en haut de la vue (flèche du temps)
     // reçoit l'évenement, la boite créée pour lui, les coordonnées du centre de la boite
-    func affiche1LongBox(unEvt:Evenement, dansBox:LongPeriodBoxView, xEvt:CGFloat, largeur:CGFloat) {
+    func affiche1LongBox(unEvt:Evenement, dansBox:LongPeriodBoxView, xEvt:CGFloat, largeur:CGFloat, auNiveau: Int) {
         // On positionne la boite
-        dansBox.center = CGPoint(x: xEvt, y: 50)
+        let yGrec = H_EVT * CGFloat(auNiveau)
+        
+        dansBox.center = CGPoint(x: xEvt, y: yGrec + H_EVT / 2)
         dansBox.frame.size.width = largeur
         // On met à jour les champs de la boite
+        dansBox.ui_leNom.numberOfLines = 0
         dansBox.ui_leNom.text = unEvt.intitule
-        dansBox.ui_leNom.frame = CGRect(x: 5, y: 5, width: dansBox.frame.width - 10, height: 40)
+        dansBox.ui_leNom.frame = CGRect(x: 5, y: 5, width: dansBox.frame.width - 10, height: 20)
         let formatter = DateFormatter()
         formatter.dateFormat = "dd-MMM-YYYY"
         let dateDeb = "\(formatter.string(from: unEvt.dateDeb))"
         let dateFin = "\(formatter.string(from: unEvt.dateFin))"
+        dansBox.ui_date.numberOfLines = 0
         dansBox.ui_date.text = dateDeb + " to " + dateFin
-        dansBox.ui_date.frame = CGRect(x: 5, y: 50, width: dansBox.frame.width - 10, height: 21)
+        dansBox.ui_date.frame = CGRect(x: 5, y: 30, width: dansBox.frame.width - 10, height: 21)
         dansBox.commentaire = unEvt.commentaire
         
         //trace
@@ -198,7 +213,7 @@ class VueEvtLongsViewController: UIViewController, UIPopoverPresentationControll
     @objc func checkAction(sender : UITapGestureRecognizer) {
         // Do what you want
         //print("touche")
-        ouvrirPop(sender.view)
+        ouvrirPop(sender.view!)
     }
     
     func ouvrirPop(_ sender: Any) {
@@ -255,6 +270,31 @@ class VueEvtLongsViewController: UIViewController, UIPopoverPresentationControll
         }
         
     }
+    
+    //----------------------------
+    //-----Utilitaires pour régler l'étagement des boites
+    //-----et éviter les chevauchements-----------
+    func dureeEvenement(evt : Evenement) -> Double {
+        return (evt.dateFin.timeIntervalSince1970 - evt.dateDeb.timeIntervalSince1970)
+    }
+    
+    func empiete(unEvenement: Evenement, sur: Evenement) -> Bool {
+        return (unEvenement.dateDeb < sur.dateFin) && (unEvenement.dateFin > sur.dateDeb)
+    }
+    
+    func calculerNiveau(evt: Evenement, dans: [Evenement], jusquA: Int, tabNiv:[Int]) -> Int {
+        if jusquA == 0 {
+            return 0
+        }
+        var niv = 0
+        for elem in 0..<jusquA {
+            if empiete(unEvenement: evt, sur: dans[elem]) {
+                niv = tabNiv[elem] + 1
+            }
+        }
+        return niv
+    }
+    
     /*
     // MARK: - Navigation
 

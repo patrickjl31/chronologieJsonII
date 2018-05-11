@@ -26,19 +26,46 @@ class GestionChronologie: NSObject {
         
         //openEvents(dansFile: currentWorkFileName)
         //openChronologies(inFile: currentWorkFileName)
-        openFiles()
+        openFilesAs()
+    }
+    
+    //----------------------------------------
+    //----reinitialisation : remise à zero des fichiers
+    func reinitialisation()  {
+        lesEvenements = []
+        lesChronologies = []
+        indexChronoCourante = -1
+        currentWorkFileName = ""
     }
     
     //Ouvre les fichiers de la base courante
     func openFiles()  {
+        
         openEvents(dansFile: "")
         openChronologies(inFile: "")
+    }
+    func openFilesAs()  {
+        if currentWorkFileName.count > 0 {
+            //openEvents(dansFile: currentWorkFileName)
+            //openChronologies(inFile: currentWorkFileName)
+            filesOpen()
+        } else {
+            openFiles()
+        }
     }
     func openEvents(dansFile:String) {
         _ = recallData(inFile: dansFile)
     }
     func openChronologies(inFile: String)  {
         lesChronologies = recallChronos(inFile: inFile)
+    }
+    
+    // Sauvegarde les fichiers sous le nom courant
+    func  saveAllAs() {
+        if currentWorkFileName.count > 0 {
+            saveData(inFile: currentWorkFileName)
+            saveChronologies(inFile: currentWorkFileName)
+        }
     }
     
     // MARK: Gérer les événements--------------------
@@ -215,7 +242,7 @@ class GestionChronologie: NSObject {
                     do{
                         try json.write(to: fileURL, atomically: true, encoding: .utf8)
                     }catch {
-                        print("erreur d'écriture")
+                        print(NSLocalizedString("Writing error", comment: "erreur d'écriture"))
                     }
                     //print("saveChronologies fait : \(json)")
                 }
@@ -249,7 +276,7 @@ class GestionChronologie: NSObject {
                 }
                 
             } catch {
-                print("Failed reading from URL: \(fileURL), Error: ")
+                print(NSLocalizedString("Failed reading from URL: \(fileURL), Error: ", comment: "Impossible de lire l'URL: \(fileURL), Erreur: "))
                 recall = []
             }
         }
@@ -280,7 +307,7 @@ class GestionChronologie: NSObject {
                     do{
                         try json.write(to: fileURL, atomically: true, encoding: .utf8)
                     }catch {
-                        print("erreur d'écriture")
+                        print(NSLocalizedString("Writing error", comment: "erreur d'écriture"))
                     }
                     //print("saveData fait: \(json)")
                 }
@@ -348,6 +375,8 @@ class GestionChronologie: NSObject {
         if currentWorkFileName.count > 0 {
             openEvents(dansFile: currentWorkFileName)
             openChronologies(inFile: currentWorkFileName)
+            // Pas de chronoCourante
+            indexChronoCourante = -1
         }
     }
     //

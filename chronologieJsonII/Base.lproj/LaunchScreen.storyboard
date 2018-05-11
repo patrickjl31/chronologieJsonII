@@ -1,7 +1,11 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="ipad9_7" orientation="landscape">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -11,9 +15,59 @@
             <objects>
                 <viewController id="01J-lp-oVM" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="orange-inv.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="B54-lS-xFE">
+                                <rect key="frame" x="0.0" y="20" width="1024" height="748"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="© Patrick Lanneau" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="50" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7PX-cl-b0k">
+                                <rect key="frame" x="8" y="633.5" width="1008" height="34.5"/>
+                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fleche2.png" translatesAutoresizingMaskIntoConstraints="NO" id="nWz-W1-MsL">
+                                <rect key="frame" x="0.0" y="334" width="1024" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="NEi-gB-FTg"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chronologies..." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="50" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="flQ-lI-IUo">
+                                <rect key="frame" x="8" y="120" width="1008" height="57.5"/>
+                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="50"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xKH-sk-2tW">
+                                <rect key="frame" x="8" y="207.5" width="1008" height="69"/>
+                                <string key="text">Manage your events
+Draw your chronologies ...</string>
+                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="7PX-cl-b0k" secondAttribute="bottom" constant="100" id="1qE-LF-5uD"/>
+                            <constraint firstItem="B54-lS-xFE" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="2oQ-Uo-drm"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="xKH-sk-2tW" secondAttribute="trailing" constant="8" id="5Rr-jO-VMz"/>
+                            <constraint firstItem="xKH-sk-2tW" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" constant="8" id="7Bn-xr-nRx"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="nWz-W1-MsL" secondAttribute="trailing" id="8dP-bT-aMW"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="flQ-lI-IUo" secondAttribute="trailing" constant="8" id="AtW-Wj-LdN"/>
+                            <constraint firstItem="nWz-W1-MsL" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="Ers-WY-NGb"/>
+                            <constraint firstItem="nWz-W1-MsL" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="HbF-nF-xLW"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="7PX-cl-b0k" secondAttribute="trailing" constant="8" id="IvD-3f-ihQ"/>
+                            <constraint firstItem="flQ-lI-IUo" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="JwO-Ew-Hum"/>
+                            <constraint firstItem="xKH-sk-2tW" firstAttribute="top" secondItem="flQ-lI-IUo" secondAttribute="bottom" constant="30" id="XIQ-xH-AvN"/>
+                            <constraint firstItem="flQ-lI-IUo" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="Ypf-so-Fhq"/>
+                            <constraint firstItem="flQ-lI-IUo" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="aIV-2d-Bz2"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="B54-lS-xFE" secondAttribute="bottom" id="adu-0l-XoW"/>
+                            <constraint firstItem="B54-lS-xFE" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="die-ga-en7"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="B54-lS-xFE" secondAttribute="trailing" id="klH-Ij-2fs"/>
+                            <constraint firstItem="7PX-cl-b0k" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="uxI-Se-1jY"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
@@ -22,4 +76,8 @@
             <point key="canvasLocation" x="53" y="375"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="fleche2.png" width="2038" height="220"/>
+        <image name="orange-inv.jpg" width="3000" height="2000"/>
+    </resources>
 </document>

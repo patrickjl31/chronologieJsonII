@@ -50,19 +50,21 @@ class NouvelEvenementViewController: UIViewController, UITextFieldDelegate {
     
     // Les données globales envoyées par le viewController
     var chronologies:GestionChronologie?
-    var permitSaveValues:Bool?
+    var permitSaveValues:Bool = true
     var indexEvenement:Int = -1
     var unEvent:Evenement?
     var instanceOfViewController:ViewController!
     
     // Les données de travail
     var textSaved = ""
+    // Doit-on ajouter l'événement ou simplement le modifier ?
+    var nouvelEvenementASauver = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        if permitSaveValues! {
+        if permitSaveValues {
             saveButton.isHidden = false
             cancelButton.isHidden = false
             
@@ -82,15 +84,20 @@ class NouvelEvenementViewController: UIViewController, UITextFieldDelegate {
         // A-t-on passé un événement à afficher ?
         if let emptyEvt = unEvent?.intitule.count {
             if emptyEvt > 0 {
+                nouvelEvenementASauver = false
                 ui_titre.text = unEvent?.intitule
                 ui_comment.text = unEvent?.commentaire
                 laDate = (unEvent?.dateDeb)!
+                dateDeb = (unEvent?.dateDeb)!
+                dateFin = (unEvent?.dateFin)!
                 updateDate()
             }
-        } else {
+         else {
+            nouvelEvenementASauver = true
             ui_jour.text = "1"
             ui_mois.text = "1"
             ui_an.text = ""
+        }
         }
     }
 
@@ -196,9 +203,9 @@ class NouvelEvenementViewController: UIViewController, UITextFieldDelegate {
     
     
     @IBAction func cancelAction(_ sender: UIButton) {
-        //dismiss(animated: true, completion: nil)
+        dismiss(animated: true, completion: nil)
         
-       _ = navigationController?.popViewController(animated: true)
+       //_ = navigationController?.popViewController(animated: true)
         
     }
     
@@ -215,7 +222,7 @@ class NouvelEvenementViewController: UIViewController, UITextFieldDelegate {
         } 
         
         if let titre = ui_titre.text{
-            let date = ui_Date.text
+            //let date = ui_Date.text
             //unEvent = Evenement()
             unEvent?.intitule = titre
             unEvent?.commentaire = ui_comment.text
@@ -224,16 +231,20 @@ class NouvelEvenementViewController: UIViewController, UITextFieldDelegate {
             
             unEvent?.ponctuel = evtPonctuel
             unEvent?.typeLongTerme = true
-            chronologies?.lesEvenements.append(unEvent!)
+            if nouvelEvenementASauver {
+                chronologies?.lesEvenements.append(unEvent!)
+            }
+            
             // On trie
             chronologies?.lesEvenements.sort(by: {$0.dateDeb < $1.dateDeb})
+            
             // On enregistre
             chronologies?.saveData(inFile: "")
             // On recharge sur le viewController
             instanceOfViewController.eventTableView.reloadData()
             // On quitte
-            //dismiss(animated: true, completion: nil)
-            _ = navigationController?.popViewController(animated: true)
+            dismiss(animated: true, completion: nil)
+            //_ = navigationController?.popViewController(animated: true)
         }
         
     }

@@ -235,11 +235,11 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="ezI-W1-zAQ">
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="ezI-W1-zAQ">
                                 <rect key="frame" x="714" y="165" width="274" height="30"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iJZ-bp-Vm9">
-                                        <rect key="frame" x="0.0" y="0.0" width="88" height="30"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="122" height="30"/>
                                         <state key="normal" title="Create event"/>
                                         <connections>
                                             <action selector="createEvent:" destination="BYZ-38-t0r" eventType="touchUpInside" id="neR-Jg-XKj"/>
@@ -249,7 +249,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RLQ-TY-QmL">
-                                        <rect key="frame" x="244" y="0.0" width="30" height="30"/>
+                                        <rect key="frame" x="152" y="0.0" width="122" height="30"/>
                                         <state key="normal" title="edit"/>
                                         <connections>
                                             <action selector="observeEvent:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bnT-qb-dvL"/>
@@ -527,9 +527,9 @@
                                 </connections>
                             </containerView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tQy-NU-Rkr">
-                                <rect key="frame" x="804" y="694" width="200" height="30"/>
+                                <rect key="frame" x="904" y="694" width="100" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="200" id="yXx-oZ-iyo"/>
+                                    <constraint firstAttribute="width" constant="100" id="yXx-oZ-iyo"/>
                                 </constraints>
                                 <state key="normal" title="Save to PDF"/>
                                 <connections>
@@ -597,8 +597,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Commentaire" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Muh-jx-sKs">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Muh-jx-sKs">
                                 <rect key="frame" x="0.0" y="60" width="1024" height="708"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -739,9 +740,9 @@ Event files and timelines are saved in JSON format and can be retrieved through 
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="6FN-rd-I6P">
-                                <rect key="frame" x="16" y="341.5" width="350" height="150"/>
+                                <rect key="frame" x="16" y="361.5" width="350" height="216"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="150" id="fRm-3T-q5e"/>
+                                    <constraint firstAttribute="height" constant="216" id="fRm-3T-q5e"/>
                                     <constraint firstAttribute="width" constant="350" id="lQ7-l7-wcU"/>
                                 </constraints>
                                 <date key="date" timeIntervalSinceReferenceDate="527249566.95036203">
@@ -830,7 +831,7 @@ Event files and timelines are saved in JSON format and can be retrieved through 
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="lQl-Sp-FAy">
-                                <rect key="frame" x="16" y="511.5" width="350" height="30"/>
+                                <rect key="frame" x="16" y="602.5" width="350" height="30"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UDR-6B-hTg">
                                         <rect key="frame" x="0.0" y="0.0" width="150" height="30"/>
@@ -878,7 +879,7 @@ Event files and timelines are saved in JSON format and can be retrieved through 
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="lQl-Sp-FAy" firstAttribute="top" secondItem="6FN-rd-I6P" secondAttribute="bottom" constant="20" id="1YE-Az-0Ik"/>
+                            <constraint firstItem="lQl-Sp-FAy" firstAttribute="top" secondItem="6FN-rd-I6P" secondAttribute="bottom" constant="25" id="1YE-Az-0Ik"/>
                             <constraint firstItem="yZv-Cb-qR4" firstAttribute="top" secondItem="A5l-Gc-bPr" secondAttribute="bottom" constant="16" id="9nd-ZP-rbc"/>
                             <constraint firstItem="NJy-xg-1sV" firstAttribute="leading" secondItem="369-4k-KUP" secondAttribute="leading" constant="16" id="EPH-zT-ovO"/>
                             <constraint firstItem="A5l-Gc-bPr" firstAttribute="top" secondItem="HlA-Tq-63P" secondAttribute="bottom" constant="20" id="HVS-A3-hZg"/>
@@ -891,7 +892,7 @@ Event files and timelines are saved in JSON format and can be retrieved through 
                             <constraint firstItem="MT6-5M-DZI" firstAttribute="leading" secondItem="369-4k-KUP" secondAttribute="leading" constant="16" id="UdG-cC-bTv"/>
                             <constraint firstItem="MT6-5M-DZI" firstAttribute="top" secondItem="A5l-Gc-bPr" secondAttribute="bottom" constant="16" id="Usx-Is-yWT"/>
                             <constraint firstItem="A5l-Gc-bPr" firstAttribute="top" secondItem="HlA-Tq-63P" secondAttribute="bottom" constant="20" id="WQS-Aw-Rg1"/>
-                            <constraint firstItem="6FN-rd-I6P" firstAttribute="top" secondItem="NJy-xg-1sV" secondAttribute="bottom" constant="20" id="jEJ-MS-nmV"/>
+                            <constraint firstItem="6FN-rd-I6P" firstAttribute="top" secondItem="NJy-xg-1sV" secondAttribute="bottom" constant="40" id="jEJ-MS-nmV"/>
                             <constraint firstItem="A5l-Gc-bPr" firstAttribute="leading" secondItem="369-4k-KUP" secondAttribute="leading" constant="16" id="jl8-bR-SyF"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="369-4k-KUP"/>

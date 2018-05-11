@@ -46,15 +46,19 @@ class FriseViewController: UIViewController {
         
         navigationItem.rightBarButtonItem = envoyer
     }
+    
     @objc func sendPDF()  {
         //print("J'envoie le PDF)")
         let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
         var path = paths[0] as String
-        path = path + "/default.pdf"
+        path = path + "/actualtimeline.pdf"
+        /*
         if !FileManager.default.fileExists(atPath: path){
             // On sauve
             let monPath = createPdfFromView(aView: self.view, saveToDocumentsWithFileName: "default.pdf")
         }
+ */
+        let monPath = createPdfFromView(aView: self.view, saveToDocumentsWithFileName: "actualtimeline.pdf")
         let url = NSURL(fileURLWithPath: path)
         let controller = UIActivityViewController(activityItems: [url], applicationActivities: nil)
         controller.popoverPresentationController?.sourceView = self.view

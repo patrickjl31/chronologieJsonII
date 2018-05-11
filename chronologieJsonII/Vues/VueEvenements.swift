@@ -10,6 +10,9 @@
 
 // La vue en haut de la vue frise où sont affichés les événements.
 
+// semble inutilisée
+
+
 import UIKit
 
 class VueEvenements: UIView {
@@ -46,7 +49,7 @@ class VueEvenements: UIView {
     override func draw(_ rect: CGRect) {
         // Drawing code
         
-        let context = UIGraphicsGetCurrentContext()
+        //let context = UIGraphicsGetCurrentContext()
         //context!.saveGState()
         //        context?.setLineWidth(2.0)
         //        context?.setStrokeColor(UIColor.blue.cgColor)
@@ -63,9 +66,9 @@ class VueEvenements: UIView {
         // On positionne les vues evenement par leur centre
         let DebUtile: CGFloat = L_EVT / 2
         let Milieu:CGFloat = LView / 2
-        let FinUtile: CGFloat = LView - L_EVT
+        //let FinUtile: CGFloat = LView - L_EVT
         // la zone de positionnement possible de centres des boxes
-        let zoneCentrale = LView - L_EVT
+        //let zoneCentrale = LView - L_EVT
         let Niveau1: CGFloat = HView - (H_EVT / 2) - MARGE_BASSE
         // Nombre de boites à afficher
         let nombreEvenements = 5//GlobalVariables.chronologieCourante.listeEvenements.count

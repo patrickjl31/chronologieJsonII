@@ -26,7 +26,7 @@ class VueEvtPonctuelsViewController: UIViewController, UIPopoverPresentationCont
     //Taille frise contiendra la ytaille temporelle de la frise
     var tailleFrise:Double = 0
     // Taille mini d'un evenement long
-    let RAPPORT_TAILLE_MINI_DUREE_TOTALE = 0.05
+    let RAPPORT_TAILLE_MINI_DUREE_TOTALE = 0.03
     
     private var chronoCourante: Chronologie?
     // Les événements de la chronologie courante
@@ -108,7 +108,7 @@ class VueEvtPonctuelsViewController: UIViewController, UIPopoverPresentationCont
     // Pour vérification
     func affichageTitres(liste:[Evenement]){
         for evt in liste{
-            print("\(evt.intitule)")
+            //print("\(evt.intitule)")
         }
     }
     
@@ -140,7 +140,7 @@ class VueEvtPonctuelsViewController: UIViewController, UIPopoverPresentationCont
         
         let amplitudeTemps =  Double((finTemps?.timeIntervalSince1970)! - (debutTemps?.timeIntervalSince1970)!)
         let amplitudeFrise = FinUtile - DebUtile
-        let rapportTempsFrise = amplitudeTemps / Double(amplitudeFrise)
+        //let rapportTempsFrise = amplitudeTemps / Double(amplitudeFrise)
             //let debTemps = listeEvt[0].dateDeb.timeIntervalSince1970
         let debTemps = debutTemps?.timeIntervalSince1970
             // Pour calculer l'étage d'affichage de la boite
@@ -215,7 +215,23 @@ class VueEvtPonctuelsViewController: UIViewController, UIPopoverPresentationCont
         dansBox.box.ui_date.text = dates
         dansBox.box.commentaire = unEvt.commentaire
         dansBox.box.center = CGPoint(x: xEvt, y: yEvt)
-        dansBox.ligne.frame = CGRect(x: xEvt-1, y: yBase, width: 3, height: yArr - yBase)
+        // Claculer l'épaisseur de la ligne en fonction de la durée courte de l'événement
+        var tailleTrait:CGFloat = CGFloat(unEvt.dateFin.timeIntervalSince1970 - unEvt.dateDeb.timeIntervalSince1970)
+        if tailleTrait < 1 {
+            tailleTrait = 2
+        } else {
+            let amplitudeTemps =  Double((finTemps?.timeIntervalSince1970)! - (debutTemps?.timeIntervalSince1970)!)
+            // Longueur et hauteur de la vue
+            let LView = self.view.frame.width
+            //let HView:CGFloat = self.view.frame.height
+            // On positionne les vues evenement par leur centre
+            let DebUtile: CGFloat = 10//(L_EVT / 2) + 10 //L_EVT / 2
+            //let Milieu:CGFloat = LView / 2
+            let FinUtile: CGFloat = LView -  10
+            let amplitudeFrise = FinUtile - DebUtile
+            tailleTrait = tailleTrait / CGFloat(amplitudeTemps) * CGFloat(amplitudeFrise)
+        }
+        dansBox.ligne.frame = CGRect(x: xEvt-1, y: yBase, width: CGFloat(tailleTrait), height: yArr - yBase)
         dansBox.box.isHidden = false
         dansBox.ligne.isHidden = false
         // Trace
@@ -355,18 +371,7 @@ class VueEvtPonctuelsViewController: UIViewController, UIPopoverPresentationCont
     
     
     
-    
-    
-    
-    
-    
     //-----------------------------------------------
-    
-    
-   
-        
-    
-    
     
     
     

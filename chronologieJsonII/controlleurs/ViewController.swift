@@ -13,6 +13,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     @IBOutlet weak var ui_titreFrise: UITextField!
     
     @IBOutlet weak var currentFriseTitle: UILabel!
+    @IBOutlet weak var ui_titrePage: UILabel!
     
     @IBOutlet weak var createFrise: UIButton!
     @IBOutlet weak var modifyFrise: UIButton!
@@ -29,7 +30,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     @IBOutlet weak var observeButton: UIButton!
     
     // Les objets qui serviront au transfert de données vers les autres pages
-    // le flag qui permet d'ouvrirnouvelEnregistrementController en lecture seule ou écriture
+    // le flag qui permet d'ouvrir nouvelEnregistrementController en lecture seule ou écriture
     var flagPermitSaveNouvelEvenement: Bool = true
     //l'événement à créer ou modifier
     var evenemenATransferer: Evenement?
@@ -64,36 +65,43 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         eventTableView.delegate = self
         eventTableView.allowsSelection = true
         
-        friseTableView.reloadData()
-        currentTableView.reloadData()
-        eventTableView.reloadData()
+        rafraichirTables()
+        
+        // On gere l'édition de la liste d'événements
+        //self.navigationItem.rightBarButtonItem = self.editButtonItem
+        //eventTableView.setEditing(true, animated: true)
         
         // On gère les apprences des boutons
+        gererAffichage()
+        /*
         observeButton.isHidden = true
         copyToFriseButton.isHidden = true
         voirFiseButton.isHidden = true
         modifyFrise.isHidden = true
         // et des labels
         currentFriseTitle.text = ""
+        */
         
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        friseTableView.reloadData()
-        currentTableView.reloadData()
-        eventTableView.reloadData()
+        rafraichirTables()
+        /*
         // On gère les apprences des boutons
-        observeButton.isHidden = true
+        //observeButton.isHidden = true
         copyToFriseButton.isHidden = true
-        voirFiseButton.isHidden = true
+        //voirFiseButton.isHidden = true
         modifyFrise.isHidden = true
         // et des labels
-        currentFriseTitle.text = ""
+        //currentFriseTitle.text = ""
+        if chronos.indexChronoCourante > -1 {
+            print("\(chronos.lesChronologies[chronos.indexChronoCourante].intitule)")
+        }
+        */
+        gererAffichage()
     }
     override func viewWillAppear(_ animated: Bool) {
-        friseTableView.reloadData()
-        currentTableView.reloadData()
-        eventTableView.reloadData()
+        rafraichirTables()
     }
 
     override func didReceiveMemoryWarning() {
@@ -110,6 +118,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             modifyFrise.isHidden = false
         } else {
             modifyFrise.isHidden = true
+            ui_titreFrise.text = ""
+            currentFriseTitle.text = ""
         }
         if let len = ui_titreFrise.text?.count {
             if len > 0 {
@@ -130,9 +140,108 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         } else {
             voirFiseButton.isHidden = true
         }
-        
+        //events
+        if chronos.lesEvenements.count > 0 {
+            observeButton.isHidden = false
+            observeButton.setTitle("edit", for: .normal)
+            eventTableView.setEditing(false, animated: true)
+        } else {
+            observeButton.isHidden = true
+            eventTableView.setEditing(false, animated: true)
+        }
+        copyToFriseButton.isHidden = true
+        // Titre page
+        let baseTitre = NSLocalizedString("Timeline", comment: "Chronologie")
+        let monTitre = chronos.currentWorkFileName
+        if monTitre != "" {
+            self.title = baseTitre + " : " + monTitre
+        } else {
+            self.title = baseTitre
+        }
         
     }
+    
+    //-------------------------------------------
+    //--------- gestion de fichiers--------------
+    @IBAction func fileNew(_ sender: Any) {
+        if chronos.currentWorkFileName.count > 0 {
+            //On demande si on sauve
+            chronos.saveAllAs()
+        }
+        chronos.reinitialisation()
+        rafraichirTables()
+        gererAffichage()
+    }
+    
+    @IBAction func fileSave(_ sender: Any) {
+        if chronos.currentWorkFileName.count == 0 {
+            inputFileName()
+            
+        }
+        chronos.saveAllAs()
+    }
+    
+    @IBAction func fileSaveAs(_ sender: Any) {
+        inputFileName()
+        chronos.saveAllAs()
+    }
+    
+    @IBAction func fileOpen(_ sender: Any) {
+        // appel de poplistfil...
+        // qui ouvre et met à jour
+        
+        rafraichirTables()
+        gererAffichage()
+    }
+    
+    // mise à jour des listes
+    func rafraichirTables()  {
+        friseTableView.reloadData()
+        currentTableView.reloadData()
+        eventTableView.reloadData()
+    }
+    
+    //----------------------------------------------
+    //---------dialogue d'entrée de nom de fichier
+    //----------------------------------------------
+    // Inputfilename : demande un nom de fichier. S'il est fourni, il est vérifié, enregistré, et le fichier sauvé
+    func inputFileName(){
+        let dialog = UIAlertController(title: "Save as :", message: "Use only letters, numbers or - or _ )", preferredStyle: .alert)
+        //let confirm = UIAlertAction
+        let textAction = UIAlertAction(title: "OK", style: .default) { (alertAction) in
+            let textField = dialog.textFields![0] as UITextField
+            if let nf = textField.text {
+                var nomFic = nf //textField.text
+                // On remplace les espace par des underscores
+                nomFic = nomFic.replacingOccurrences(of: " ", with: "_")
+                //On filtre
+                let tiret = CharacterSet.init(charactersIn: "-_")
+                var authorizedSet = CharacterSet.alphanumerics
+                authorizedSet = authorizedSet.union(tiret)
+                nomFic = String((nomFic.unicodeScalars.filter {authorizedSet.contains($0)}))
+                // On enregistre ce nom dans le modèle
+                self.chronos.currentWorkFileName = nomFic
+                self.chronos.setCurrentFileName(to: nomFic)
+                // On sauve sous ce nom
+                self.chronos.saveAllAs()
+                //print("rename \(nomFichier) to \(nomFic)")
+                
+            }
+        }
+        dialog.addTextField { (textField) in
+            textField.placeholder = "my_file"
+        }
+        dialog.addAction(textAction)
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        //let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        
+        dialog.addAction(cancelAction)
+        //dialog.addAction(okAction)
+        self.present(dialog, animated: true)
+    }
+    
+    // -------- dialog OK
+    
     
     // MARK : le tableau des événements ---------
     // Les actions des boutons
@@ -153,14 +262,24 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     @IBAction func observeEvent(_ sender: UIButton) {
         // Show evenement sans bouton save
+        if sender.title(for: .normal) == "edit" {
+            sender.setTitle("done", for: .normal)
+            eventTableView.setEditing(true, animated: true)
+        } else {
+            sender.setTitle("edit", for: .normal)
+            eventTableView.setEditing(false, animated: true)
+        }
+        
+        /*
         if indexTable[2] > -1 {
-            flagPermitSaveNouvelEvenement = false
+            //modify... on permet la sauvegarde
+            flagPermitSaveNouvelEvenement = true
             evenemenATransferer =
                chronos.lesEvenements[indexTable[2]]
             // On utilise la segue de newevent
             performSegue(withIdentifier: "newEvent", sender: sender)
         }
-       
+ */
         
     }
     
@@ -271,20 +390,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             if cell == nil {
                 cell = UITableViewCell(style: .subtitle, reuseIdentifier: "current-cell")
             }
-            /*
-            if chronos.indexChronoCourante > -1 {
-                let laChrono = chronos.lesChronologies[chronos.indexChronoCourante]
-                let evenementAAfficher = laChrono.mesEvenements[indexPath.row]
-                cell!.textLabel!.text = "Evt = " +  evenementAAfficher.intitule//"current"
-                //let saDate = "le \(listeEvenements[indexPath.row].date)"
-                let dateFormatter = DateFormatter()
-                dateFormatter.dateFormat = "dd-MM-yyyy"
-                dateFormatter.dateStyle = .medium
-                let saDate = dateFormatter.string(from: evenementAAfficher.dateDeb)
-                //print (saDate)
-                cell!.detailTextLabel?.text = "Date :\(saDate)"
-            }
-            */
+           
             let indexCourant = chronos.indexChronoCourante
             if indexCourant > -1 {
                 let courant = chronos.lesChronologies[indexCourant]
@@ -310,15 +416,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             if cell == nil {
                 cell = UITableViewCell(style: .subtitle, reuseIdentifier: "event-cell")
             }
-            /*
-             //let previewDetail = sampleData1[indexPath.row]
-             cell!.textLabel!.text = "event"
-             let dateFormatter = DateFormatter()
-             dateFormatter.dateFormat = "dd-MM-yyyy"
-             dateFormatter.dateStyle = .medium
-             let saDate = dateFormatter.string(from: Date())
-             //print (saDate)
-             */
+            
             let unEvenement = chronos.lesEvenements[indexPath.row]
             cell?.textLabel?.text = unEvenement.intitule
             let dateFormatter = DateFormatter()
@@ -337,7 +435,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     //---------
     func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
-        let index: Int = indexPath.row
+        //let index: Int = indexPath.row
         if tableView == self.friseTableView {
             //index = indexPath.row
             //chronologieSelected = -1
@@ -358,8 +456,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         if tableView == self.eventTableView {
             //index = indexPath.row
             indexTable[2] = -1  //typeTables.evenement.rawValue
-            observeButton.isHidden = true
-            copyToFriseButton.isHidden = true
+            //observeButton.isHidden = true
+            //copyToFriseButton.isHidden = true
         }
         //tableView.deselectRow(at: indexPath, animated: false)
         //print("Déselection de \(indexTable)")
@@ -392,14 +490,29 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         if tableView == self.eventTableView {
             index = indexPath.row
             indexTable[2] = indexPath.row
-            observeButton.isHidden = false
-            copyToFriseButton.isHidden = false
+            //observeButton.isHidden = false
+            if chronos.indexChronoCourante > -1 {
+                copyToFriseButton.isHidden = false
+            } else {
+                copyToFriseButton.isHidden = true
+            }
+            
+            if indexTable[0] > -1 {
+                copyToFriseButton.isHidden = false
+            }
+            //eventTableView.setEditing(true, animated: true)
+            
         }
         //print("Sélection : \(indexTable)")
         //print("did select:      \(indexPath.row)  ")
     }
     
     // - modification des tables
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        
+        return true
+    }
+    
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         let index = indexPath.row
         if tableView == self.friseTableView {
@@ -443,8 +556,29 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                 self.friseTableView.reloadData()
                 self.currentTableView.reloadData()
             }
+            if editingStyle == .insert {
+                // Show nouvel evenement
+                flagPermitSaveNouvelEvenement = false
+                // On positionne l'index selectionné à -1
+                indexTable[2] = -1
+                // on crée l'événement à informer
+                evenemenATransferer = Evenement()
+            }
+            
         }
         //print("\(indexTable)")
+    }
+    
+    func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+        //print("move")
+        if indexTable[2] > -1 {
+            //modify... on permet la sauvegarde
+            flagPermitSaveNouvelEvenement = false
+            evenemenATransferer =
+                chronos.lesEvenements[indexTable[2]]
+            // On utilise la segue de newevent
+            performSegue(withIdentifier: "newEvent", sender: self)
+        }
     }
     
     // Prepare for segue
@@ -452,7 +586,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         if (segue.identifier == "newEvent") || (segue.identifier == "newEvent1"){
             let vc = segue.destination as! NouvelEvenementViewController
             vc.chronologies = chronos
-            vc.permitSaveValues = flagPermitSaveNouvelEvenement
+            vc.nouvelEvenementASauver = flagPermitSaveNouvelEvenement
             vc.indexEvenement = indexTable[2]
             vc.unEvent = evenemenATransferer
             vc.instanceOfViewController = self
@@ -473,6 +607,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             vc.view.setNeedsLayout()
             vc.view.layoutIfNeeded()
             
+        }
+        if segue.identifier == "listFiles" {
+            let vc = segue.destination as! PopListFileTableViewController
+            vc.chrono = chronos
+            vc.pere = self
         }
     }
     

@@ -39,6 +39,7 @@ class EvenementBoxView: UIView {
         
         ui_date.frame = CGRect(x: 5, y: 50, width: self.frame.width - 10, height: 21)
         ui_date.backgroundColor = UIColor.white
+        ui_date.numberOfLines = 0
         ui_date.textAlignment = NSTextAlignment.center
         ui_date.text = "Date"
         ui_date.adjustsFontSizeToFitWidth = true
