@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2A154768202A4B6B006F15B4"
-               BuildableName = "chronologieJsonII.app"
-               BlueprintName = "chronologieJsonII"
-               ReferencedContainer = "container:chronologieJsonII.xcodeproj">
+               BuildableName = "chronologies.app"
+               BlueprintName = "chronologies"
+               ReferencedContainer = "container:chronologies.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2A154768202A4B6B006F15B4"
-            BuildableName = "chronologieJsonII.app"
-            BlueprintName = "chronologieJsonII"
-            ReferencedContainer = "container:chronologieJsonII.xcodeproj">
+            BuildableName = "chronologies.app"
+            BlueprintName = "chronologies"
+            ReferencedContainer = "container:chronologies.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -45,8 +45,7 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      language = "fr"
-      region = "FR"
+      language = "en"
       launchStyle = "0"
       useCustomWorkingDirectory = "NO"
       ignoresPersistentStateOnLaunch = "NO"
@@ -58,9 +57,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2A154768202A4B6B006F15B4"
-            BuildableName = "chronologieJsonII.app"
-            BlueprintName = "chronologieJsonII"
-            ReferencedContainer = "container:chronologieJsonII.xcodeproj">
+            BuildableName = "chronologies.app"
+            BlueprintName = "chronologies"
+            ReferencedContainer = "container:chronologies.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -77,9 +76,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2A154768202A4B6B006F15B4"
-            BuildableName = "chronologieJsonII.app"
-            BlueprintName = "chronologieJsonII"
-            ReferencedContainer = "container:chronologieJsonII.xcodeproj">
+            BuildableName = "chronologies.app"
+            BlueprintName = "chronologies"
+            ReferencedContainer = "container:chronologies.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

@@ -40,7 +40,7 @@
 		2A021A9120986B9E00575569 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		2A1472A22057C111000C048D /* LongPeriodBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LongPeriodBoxView.swift; sourceTree = "<group>"; };
 		2A1472AB205AC7FC000C048D /* VueEvtLongsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VueEvtLongsViewController.swift; sourceTree = "<group>"; };
-		2A154769202A4B6B006F15B4 /* chronologieJsonII.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = chronologieJsonII.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2A154769202A4B6B006F15B4 /* chronologies.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = chronologies.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A15476C202A4B6B006F15B4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2A154771202A4B6B006F15B4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2A154773202A4B6B006F15B4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -92,7 +92,7 @@
 		2A15476A202A4B6B006F15B4 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				2A154769202A4B6B006F15B4 /* chronologieJsonII.app */,
+				2A154769202A4B6B006F15B4 /* chronologies.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -164,9 +164,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		2A154768202A4B6B006F15B4 /* chronologieJsonII */ = {
+		2A154768202A4B6B006F15B4 /* chronologies */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2A15477B202A4B6B006F15B4 /* Build configuration list for PBXNativeTarget "chronologieJsonII" */;
+			buildConfigurationList = 2A15477B202A4B6B006F15B4 /* Build configuration list for PBXNativeTarget "chronologies" */;
 			buildPhases = (
 				2A154765202A4B6B006F15B4 /* Sources */,
 				2A154766202A4B6B006F15B4 /* Frameworks */,
@@ -176,9 +176,9 @@
 			);
 			dependencies = (
 			);
-			name = chronologieJsonII;
+			name = chronologies;
 			productName = chronologieJsonII;
-			productReference = 2A154769202A4B6B006F15B4 /* chronologieJsonII.app */;
+			productReference = 2A154769202A4B6B006F15B4 /* chronologies.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -197,7 +197,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 2A154764202A4B6B006F15B4 /* Build configuration list for PBXProject "chronologieJsonII" */;
+			buildConfigurationList = 2A154764202A4B6B006F15B4 /* Build configuration list for PBXProject "chronologies" */;
 			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -211,7 +211,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				2A154768202A4B6B006F15B4 /* chronologieJsonII */,
+				2A154768202A4B6B006F15B4 /* chronologies */,
 			);
 		};
 /* End PBXProject section */
@@ -422,7 +422,7 @@
 				INFOPLIST_FILE = chronologieJsonII/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = org.lanneau.chronologieJsonII;
+				PRODUCT_BUNDLE_IDENTIFIER = org.lanneau.chronologies;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 2;
@@ -438,7 +438,7 @@
 				INFOPLIST_FILE = chronologieJsonII/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = org.lanneau.chronologieJsonII;
+				PRODUCT_BUNDLE_IDENTIFIER = org.lanneau.chronologies;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 2;
@@ -448,7 +448,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		2A154764202A4B6B006F15B4 /* Build configuration list for PBXProject "chronologieJsonII" */ = {
+		2A154764202A4B6B006F15B4 /* Build configuration list for PBXProject "chronologies" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2A154779202A4B6B006F15B4 /* Debug */,
@@ -457,7 +457,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2A15477B202A4B6B006F15B4 /* Build configuration list for PBXNativeTarget "chronologieJsonII" */ = {
+		2A15477B202A4B6B006F15B4 /* Build configuration list for PBXNativeTarget "chronologies" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2A15477C202A4B6B006F15B4 /* Debug */,

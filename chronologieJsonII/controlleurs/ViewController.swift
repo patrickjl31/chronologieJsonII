@@ -324,6 +324,14 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     //@IBOutlet weak var nomFriseField: UITextField!
    
     @IBAction func modifierFriseButton(_ sender: Any) {
+        if let leTitre = ui_titreFrise.text {
+            if leTitre.count > 0, let laChrono = chronos.chronoCourante {
+                //let uneFrise = Chronologie(intitule: leTitre, typeLongTerme: true, mesEvenements: [])
+                chronos.lesChronologies[chronos.indexChronoCourante].intitule = leTitre
+                friseTableView.reloadData()
+                
+            }
+        }
     }
     
     @IBAction func creerFrise(_ sender: UIButton) {
@@ -402,7 +410,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                 let saDateDeb = dateFormatter.string(from: unEvenement.dateDeb)
                 var saDateFin = "."
                 if !unEvenement.ponctuel {
-                    saDateFin = " to " + dateFormatter.string(from: unEvenement.dateFin)
+                    let motTo = NSLocalizedString("to", comment: "to")
+                    saDateFin = " " + motTo + " " + dateFormatter.string(from: unEvenement.dateFin)
                 }
                 cell!.detailTextLabel?.text = "\(saDateDeb)" + "\(saDateFin)"
             } else {

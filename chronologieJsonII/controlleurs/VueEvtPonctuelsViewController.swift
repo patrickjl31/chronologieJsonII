@@ -310,7 +310,7 @@ class VueEvtPonctuelsViewController: UIViewController, UIPopoverPresentationCont
     @objc func checkAction(sender : UITapGestureRecognizer) {
         // Do what you want
         //print("touche")
-        ouvrirPop(sender.view)
+        ouvrirPop(sender.view as Any)
     }
     
     func ouvrirPop(_ sender: Any) {
