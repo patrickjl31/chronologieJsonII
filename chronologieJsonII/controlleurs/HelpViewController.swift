@@ -97,7 +97,7 @@ The send button on the top bar allows to send PDF image file by any means (Airdr
 Event files and timelines are saved in JSON format and can be retrieved through iTunes.
 
 """
-        let contentHelp = NSLocalizedString(textHelp_en, comment: "help")
+        //let contentHelp = NSLocalizedString(textHelp_en, comment: "help")
         //print("\(contentHelp)")
         if prefferedLanguage == "fr" {
             help.text = textHelp_fr

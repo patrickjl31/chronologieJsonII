@@ -106,12 +106,13 @@ class VueEvtPonctuelsViewController: UIViewController, UIPopoverPresentationCont
         return result
     }
     // Pour vérification
+    /*
     func affichageTitres(liste:[Evenement]){
         for evt in liste{
             //print("\(evt.intitule)")
         }
     }
-    
+    */
     // Afficher les box des evenements
     func afficherBoxes(listeEvt:[Evenement]){
         // Longueur et hauteur de la vue

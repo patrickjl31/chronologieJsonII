@@ -5,5 +5,5 @@
 /* Class = "UILabel"; text = "Chronologies..."; ObjectID = "flQ-lI-IUo"; */
 "flQ-lI-IUo.text" = "Chronologies...";
 
-/* Class = "UILabel"; text = "Manage your events\nDraw your chronologies ..."; ObjectID = "xKH-sk-2tW"; */
-"xKH-sk-2tW.text" = "Manage your events\nDraw your chronologies ...\nGérez vos événements, Tracez vos frises ...";
+/* Class = "UILabel"; text = "Manage your events, Draw your chronologies ...\nGérez vos événements, tracez vos frises..."; ObjectID = "xKH-sk-2tW"; */
+"xKH-sk-2tW.text" = "Manage your events, Draw your chronologies ...\nGérez vos événements, tracez vos frises...";
