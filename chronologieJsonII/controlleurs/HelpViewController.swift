@@ -11,6 +11,7 @@ import UIKit
 class HelpViewController: UIViewController {
 
     @IBOutlet weak var help: UITextView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -48,7 +49,7 @@ Ouvrir : ouvrir une série déjà enregistrée.
 
 
 L'écran Frise Graphique. Toucher un événement affiche le commentaire correspondant.
-Le bouton "Enregistrer en PDF" permet d'enregistrer une image PDF de l'écran sous le nom "défaut.pdf".
+Le bouton 'Enregistrer en PDF' permet d'enregistrer une image PDF de l'écran sous le nom 'défaut.pdf'.
 Le bouton d'envoi sur la barre supérieure permet d'envoyer ce fichier par tous moyens (Airdrop, mail...)
 
 Les fichiers d'événement et les chronologies sont enregistrées au format JSON et récupérable par l'intermédiaire d'iTunes.
@@ -90,7 +91,7 @@ Open: open an already recorded series.
 
 The graphic frieze screen. Touching an event displays the corresponding comment.
 
-The "save to PDF" button saves a PDF image of the screen under the name "default.pdf".
+The 'save to PDF' button saves a PDF image of the screen under the name 'default.pdf'.
 
 The send button on the top bar allows to send PDF image file by any means (Airdrop, mail ...)
 
@@ -101,6 +102,8 @@ Event files and timelines are saved in JSON format and can be retrieved through 
         //print("\(contentHelp)")
         if prefferedLanguage == "fr" {
             help.text = textHelp_fr
+        } else {
+            help.text = textHelp_en
         }
     }
 

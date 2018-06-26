@@ -242,6 +242,7 @@ class NouvelEvenementViewController: UIViewController, UITextFieldDelegate {
             chronologies?.saveData(inFile: "")
             // On recharge sur le viewController
             instanceOfViewController.eventTableView.reloadData()
+            instanceOfViewController.currentTableView.reloadData()
             // On quitte
             dismiss(animated: true, completion: nil)
             //_ = navigationController?.popViewController(animated: true)

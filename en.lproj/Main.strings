@@ -1,0 +1,150 @@
+
+/* Class = "UIButton"; normalTitle = "Done"; ObjectID = "1fZ-Md-tSS"; */
+"1fZ-Md-tSS.normalTitle" = "Done";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "2O6-OI-tBa"; */
+"2O6-OI-tBa.text" = "Label";
+
+/* Class = "UILabel"; text = "Day"; ObjectID = "3me-4Z-gzK"; */
+"3me-4Z-gzK.text" = "Day";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "5LO-Vv-OF5"; */
+"5LO-Vv-OF5.text" = "Label";
+
+/* Class = "UINavigationItem"; title = "Timeline"; ObjectID = "5ZN-aU-H6w"; */
+"5ZN-aU-H6w.title" = "Timeline";
+
+/* Class = "UIButton"; normalTitle = "Modify"; ObjectID = "5z3-ah-dKF"; */
+"5z3-ah-dKF.normalTitle" = "Modify";
+
+/* Class = "UILabel"; text = "Titre"; ObjectID = "6Su-0g-dYj"; */
+"6Su-0g-dYj.text" = "Titre";
+
+/* Class = "UITextView"; text = "Chronologies\n\nTimelines\n\nChronologies manages events and organizes them in chronologies. These timelines can be displayed as graphic friezes.\n \nI thank Clement C., the one of my former students who asked me to write this application and had the first idea! It is primarily for teachers and students who will be able to manipulate historical chronologies more easily and especially to represent it more easily.\n\nMain screen presents 3 lists.\n\n- On the right, the list of events. They are arranged in chronological order.\n- On the left, the list of chronologies\n- in the center, the current chronology under construction.\n\nEvents -> Create Event: Create a new event. By default, an event is punctual. If it has a duration, fill in the end date. An event must have at least one title.\n\nA selected event can be destroyed, or dragged into a timeline if a timeline is selected in the central list\n\nChronologies -> Create: Create a timeline. Timeline must have a title.\nA selected timeline is detailed in the central list. If it contains events, it displays a graphic frieze.\n\nOther series of events ... Buttons on the left of the top bar of the home screen allow:\n+: Create  new series of events\nSave: save the current series\nSave as: Save as a new identifier\nOpen: open an already recorded series.\n\n\n\nThe graphic frieze screen. Touching an event displays the corresponding comment.\n\nThe \"save to PDF\" button saves a PDF image of the screen under the name \"default.pdf\".\n\nThe send button on the top bar allows to send PDF image file by any means (Airdrop, mail ...)\n\nEvent files and timelines are saved in JSON format and can be retrieved through iTunes.\n\n\n"; ObjectID = "6kM-hT-eLa"; */
+"6kM-hT-eLa.text" = "Chronologies\n\nTimelines\n\nChronologies manages events and organize them in chronologies. These timelines can be displayed as graphic friezes.\n \nI thank Clement C., the one of my former students who asked me to write this application and had the first idea! It is primarily for teachers and students who will be able to manipulate historical chronologies more easily and especially to represent it more easily.\n\nMain screen presents 3 lists.\n\n- On the right, the list of events. They are arranged in chronological order.\n- On the left, the list of chronologies\n- in the center, the current chronology under construction.\n\nEvents -> Create Event: Create a new event. By default, an event is punctual. If it has a duration, fill in the end date. An event must have at least one title.\n\nA selected event can be destroyed, or dragged into a timeline if a timeline is selected in the central list\n\nChronologies -> Create: Create a timeline. Timeline must have a title.\nA selected timeline is detailed in the central list. If it contains events, it displays a graphic frieze.\n\nOther series of events ... Buttons on the left of the top bar of the home screen allow:\n+: Create  new series of events\nSave: save the current series\nSave as: Save as a new identifier\nOpen: open an already recorded series.\n\n\n\nThe graphic frieze screen. Touching an event displays the corresponding comment.\n\nThe save to PDF button saves a PDF image of the screen under the name \"default.pdf\".\n\nThe send button on the top bar allows to send PDF image file by any means (Airdrop, mail ...)\n\nEvent files and timelines are saved in JSON format and can be retrieved through iTunes.\n\n\n";
+
+/* Class = "UILabel"; text = "Year"; ObjectID = "89n-UP-SZZ"; */
+"89n-UP-SZZ.text" = "Year";
+
+/* Class = "UILabel"; text = "Chronologies"; ObjectID = "Ahy-x6-hR8"; */
+"Ahy-x6-hR8.text" = "Chronologies";
+
+/* Class = "UIButton"; normalTitle = "Create"; ObjectID = "CET-Bn-OIj"; */
+"CET-Bn-OIj.normalTitle" = "Create";
+
+/* Class = "UIButton"; normalTitle = "Save"; ObjectID = "Fyl-yY-sNa"; */
+"Fyl-yY-sNa.normalTitle" = "Save";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "HMQ-km-AWY"; */
+"HMQ-km-AWY.text" = "Title";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "HSq-P9-p8V"; */
+"HSq-P9-p8V.text" = "Label";
+
+/* Class = "UITextField"; placeholder = "Title of event"; ObjectID = "HlA-Tq-63P"; */
+"HlA-Tq-63P.placeholder" = "Title of event";
+
+/* Class = "UILabel"; text = "Month"; ObjectID = "JNl-z5-Ybg"; */
+"JNl-z5-Ybg.text" = "Month";
+
+/* Class = "UILabel"; text = "Chronologies"; ObjectID = "LvH-MR-6AJ"; */
+"LvH-MR-6AJ.text" = "Chronologies";
+
+/* Class = "UISegmentedControl"; MT6-5M-DZI.segmentTitles[0] = "Begin"; ObjectID = "MT6-5M-DZI"; */
+"MT6-5M-DZI.segmentTitles[0]" = "Begin";
+
+/* Class = "UISegmentedControl"; MT6-5M-DZI.segmentTitles[1] = "End"; ObjectID = "MT6-5M-DZI"; */
+"MT6-5M-DZI.segmentTitles[1]" = "End";
+
+/* Class = "UIButton"; normalTitle = "Observe timeline"; ObjectID = "Mcq-kQ-ItF"; */
+"Mcq-kQ-ItF.normalTitle" = "Observe timeline";
+
+/* Class = "UITextView"; text = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda."; ObjectID = "Muh-jx-sKs"; */
+"Muh-jx-sKs.text" = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "OuW-Zd-IiU"; */
+"OuW-Zd-IiU.text" = "Label";
+
+/* Class = "UILabel"; text = "Events"; ObjectID = "Pek-lj-9u3"; */
+"Pek-lj-9u3.text" = "Events";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "QPM-sb-i5P"; */
+"QPM-sb-i5P.text" = "Label";
+
+/* Class = "UILabel"; text = "Timeline : event handler"; ObjectID = "Qe1-ux-sIK"; */
+"Qe1-ux-sIK.text" = "Timeline : event handler";
+
+/* Class = "UIButton"; normalTitle = "edit"; ObjectID = "RLQ-TY-QmL"; */
+"RLQ-TY-QmL.normalTitle" = "edit";
+
+/* Class = "UIButton"; normalTitle = "Cancel"; ObjectID = "UDR-6B-hTg"; */
+"UDR-6B-hTg.normalTitle" = "Cancel";
+
+/* Class = "UILabel"; text = "Subtitle"; ObjectID = "V51-7Y-3nE"; */
+"V51-7Y-3nE.text" = "Subtitle";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "aMJ-VH-eRm"; */
+"aMJ-VH-eRm.text" = "Title";
+
+/* Class = "UILabel"; text = "Titre de la frise courante"; ObjectID = "ahW-Li-yVL"; */
+"ahW-Li-yVL.text" = "Titre de la frise courante";
+
+/* Class = "UILabel"; text = "Select or create timeline"; ObjectID = "brl-gV-HRJ"; */
+"brl-gV-HRJ.text" = "Select or create timeline";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "cXz-Gp-bcY"; */
+"cXz-Gp-bcY.text" = "Label";
+
+/* Class = "UIBarButtonItem"; title = "Save as..."; ObjectID = "f8M-nF-bLb"; */
+"f8M-nF-bLb.title" = "Save as...";
+
+/* Class = "UIBarButtonItem"; title = "Item"; ObjectID = "fCs-MW-J5C"; */
+"fCs-MW-J5C.title" = "Item";
+
+/* Class = "UILabel"; text = "Current chronology"; ObjectID = "hfD-UE-WHQ"; */
+"hfD-UE-WHQ.text" = "Current chronology";
+
+/* Class = "UIButton"; normalTitle = "Create event"; ObjectID = "iJZ-bp-Vm9"; */
+"iJZ-bp-Vm9.normalTitle" = "Create event";
+
+/* Class = "UILabel"; text = "Subtitle"; ObjectID = "jTF-iD-vcp"; */
+"jTF-iD-vcp.text" = "Subtitle";
+
+/* Class = "UITextField"; placeholder = "titre"; ObjectID = "kmT-LO-hdY"; */
+"kmT-LO-hdY.placeholder" = "titre";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "loJ-Je-yTE"; */
+"loJ-Je-yTE.text" = "Title";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "oXu-BY-RFj"; */
+"oXu-BY-RFj.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "osB-ou-s9H"; */
+"osB-ou-s9H.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "ruB-rI-usb"; */
+"ruB-rI-usb.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "s6t-Df-2WY"; */
+"s6t-Df-2WY.text" = "Label";
+
+/* Class = "UIBarButtonItem"; title = "Open..."; ObjectID = "s9E-Qw-lmA"; */
+"s9E-Qw-lmA.title" = "Open...";
+
+/* Class = "UIButton"; normalTitle = "Save to PDF"; ObjectID = "tQy-NU-Rkr"; */
+"tQy-NU-Rkr.normalTitle" = "Save to PDF";
+
+/* Class = "UIButton"; normalTitle = "Done"; ObjectID = "tpU-pO-7ag"; */
+"tpU-pO-7ag.normalTitle" = "Done";
+
+/* Class = "UILabel"; text = "Subtitle"; ObjectID = "vnI-1F-D4o"; */
+"vnI-1F-D4o.text" = "Subtitle";
+
+/* Class = "UILabel"; text = "Event Date : "; ObjectID = "yZv-Cb-qR4"; */
+"yZv-Cb-qR4.text" = "Event Date : ";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "zan-RJ-qLW"; */
+"zan-RJ-qLW.text" = "Title";
+
+/* Class = "UILabel"; text = "                           "; ObjectID = "zc7-DR-RkP"; */
+"zc7-DR-RkP.text" = "                           ";

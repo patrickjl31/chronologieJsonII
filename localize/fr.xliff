@@ -1,0 +1,401 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?><xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.2" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 http://docs.oasis-open.org/xliff/v1.2/os/xliff-core-1.2-strict.xsd">
+  <file original="chronologieJsonII/Base.lproj/InfoPlist.strings" source-language="en" datatype="plaintext" target-language="fr">
+    <header>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="9.3.1" build-num="9E501"/>
+    </header>
+    <body>
+      <trans-unit id="CFBundleDisplayName">
+        <source>chronologies</source>
+        <note>Bundle display name</note>
+      </trans-unit>
+      <trans-unit id="CFBundleName">
+        <source>$(PRODUCT_NAME)</source>
+        <note>Bundle name</note>
+      </trans-unit>
+    </body>
+  </file>
+  <file original="chronologieJsonII/Base.lproj/LaunchScreen.storyboard" source-language="en" datatype="plaintext" target-language="fr">
+    <header>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="9.3.1" build-num="9E501"/>
+    </header>
+    <body>
+      <trans-unit id="7PX-cl-b0k.text">
+        <source>© Patrick Lanneau</source>
+        <target>© Patrick Lanneau</target>
+        <note>Class = "UILabel"; text = "© Patrick Lanneau"; ObjectID = "7PX-cl-b0k";</note>
+      </trans-unit>
+      <trans-unit id="flQ-lI-IUo.text">
+        <source>Chronologies...</source>
+        <target>Chronologies...</target>
+        <note>Class = "UILabel"; text = "Chronologies..."; ObjectID = "flQ-lI-IUo";</note>
+      </trans-unit>
+      <trans-unit id="xKH-sk-2tW.text">
+        <source>Manage your events, Draw your chronologies ...
+Gérez vos événements, tracez vos frises...</source>
+        <target>Manage your events, Draw your chronologies ...\nGérez vos événements, tracez vos frises...</target>
+        <note>Class = "UILabel"; text = "Manage your events, Draw your chronologies ...\nGérez vos événements, tracez vos frises..."; ObjectID = "xKH-sk-2tW";</note>
+      </trans-unit>
+    </body>
+  </file>
+  <file original="chronologieJsonII/Base.lproj/Localizable.strings" source-language="en" datatype="plaintext" target-language="fr">
+    <header>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="9.3.1" build-num="9E501"/>
+    </header>
+    <body>
+      <trans-unit id="Date :">
+        <source>Date</source>
+        <target>Date</target>
+        <note>Date de l'événement :</note>
+      </trans-unit>
+      <trans-unit id="Failed reading from URL: \(fileURL), Error: ">
+        <source>Impossible de lire l'URL : \(fileURL), Erreur:</source>
+        <target>Impossible de lire l'URL : \(fileURL), Erreur:</target>
+        <note>Impossible de lire l'URL: \(fileURL), Erreur:</note>
+      </trans-unit>
+      <trans-unit id="Timeline">
+        <source>Chronologie</source>
+        <target>Chronologie</target>
+        <note>Chronologie</note>
+      </trans-unit>
+      <trans-unit id="Writing error">
+        <source>Erreur d'écriture</source>
+        <target>Erreur d'écriture</target>
+        <note>erreur d'écriture</note>
+      </trans-unit>
+      <trans-unit id="to">
+        <source>à</source>
+        <target>à</target>
+        <note>to</note>
+      </trans-unit>
+    </body>
+  </file>
+  <file original="chronologieJsonII/Base.lproj/Main.storyboard" source-language="en" datatype="plaintext" target-language="fr">
+    <header>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="9.3.1" build-num="9E501"/>
+    </header>
+    <body>
+      <trans-unit id="1fZ-Md-tSS.normalTitle">
+        <source>Done</source>
+        <target>Annuler</target>
+        <note>Class = "UIButton"; normalTitle = "Done"; ObjectID = "1fZ-Md-tSS";</note>
+      </trans-unit>
+      <trans-unit id="2O6-OI-tBa.text">
+        <source>Label</source>
+        <target>Label</target>
+        <note>Class = "UILabel"; text = "Label"; ObjectID = "2O6-OI-tBa";</note>
+      </trans-unit>
+      <trans-unit id="3me-4Z-gzK.text">
+        <source>Day</source>
+        <target>Jour</target>
+        <note>Class = "UILabel"; text = "Day"; ObjectID = "3me-4Z-gzK";</note>
+      </trans-unit>
+      <trans-unit id="5LO-Vv-OF5.text">
+        <source>Label</source>
+        <target>Label</target>
+        <note>Class = "UILabel"; text = "Label"; ObjectID = "5LO-Vv-OF5";</note>
+      </trans-unit>
+      <trans-unit id="5ZN-aU-H6w.title">
+        <source>Timeline</source>
+        <target>Frise</target>
+        <note>Class = "UINavigationItem"; title = "Timeline"; ObjectID = "5ZN-aU-H6w";</note>
+      </trans-unit>
+      <trans-unit id="5z3-ah-dKF.normalTitle">
+        <source>Modify</source>
+        <target>Modifier</target>
+        <note>Class = "UIButton"; normalTitle = "Modify"; ObjectID = "5z3-ah-dKF";</note>
+      </trans-unit>
+      <trans-unit id="6Su-0g-dYj.text">
+        <source>Titre</source>
+        <target>Titre</target>
+        <note>Class = "UILabel"; text = "Titre"; ObjectID = "6Su-0g-dYj";</note>
+      </trans-unit>
+      <trans-unit id="6kM-hT-eLa.text">
+        <source>Chronologies
+
+Timelines
+
+Chronologies manages events and organizes them in chronologies. These timelines can be displayed as graphic friezes.
+ 
+I thank Clement C., the one of my former students who asked me to write this application and had the first idea! It is primarily for teachers and students who will be able to manipulate historical chronologies more easily and especially to represent it more easily.
+
+Main screen presents 3 lists.
+
+- On the right, the list of events. They are arranged in chronological order.
+- On the left, the list of chronologies
+- in the center, the current chronology under construction.
+
+Events -&gt; Create Event: Create a new event. By default, an event is punctual. If it has a duration, fill in the end date. An event must have at least one title.
+
+A selected event can be destroyed, edited or dragged into a timeline if a timeline is selected in the central list
+
+Chronologies -&gt; Create: Create a timeline. Timeline must have a title.
+A selected timeline is detailed in the central list. If it contains events, it displays a graphic frieze.
+
+Other series of events ... Buttons on the left of the top bar of the home screen allow:
++ : Create  new series of events
+Save: save the current series
+Save as: Save as a new identifier
+Open: open an already recorded series.
+
+
+
+The graphic frieze screen. Touching an event displays the corresponding comment.
+
+The "save to PDF" button saves a PDF image of the screen under the name "default.pdf".
+
+The send button on the top bar allows to send PDF image file by any means (Airdrop, mail ...)
+
+Event files and timelines are saved in JSON format and can be retrieved through iTunes.
+
+</source>
+        <target>Chronologies
+
+Frises Chronologiques
+
+Frises Chronologiques gère des événements et permet de les organiser en chronologies. Ces chronologies peuvent être affichées sous la forme de frises graphiques.
+ 
+Je remercie Clément C., celui de mes anciens élèves qui m'a demandé de lui écrire cette application et en a donc eu le premier l'idée ! Elle s'adresse d'abord aux enseignants et aux élèves qui pourront manipuler plus facilement  les chronologies historiques et surtout le représenter plus facilement.
+
+L'écran principal présente 3 listes. 
+- A droite, la liste des événements. Ils sont rangés par ordre chronologique.
+- A gauche, la liste des chronologies
+- au centre, la chronologie courante en cours de construction.
+
+Evénements -&gt; Nouvel Evénement : permet de créer un nouvel événement. Par défaut, un événement est ponctuel. Si il a une durée, renseigner la date de fin. Un événement doit avoir au moins un titre.
+
+Un événement sélectionné peut être détruit, édité (modifié) ou bien glissé dans une chronologie si une chronologie est sélectionnée dans le liste centrale
+
+Chronologies -&gt; Créer : Crée une chronologie. Elle doit avoir un titre.
+Une chronologie sélectionnée est détaillée dans la liste centrale.  Si elle contient des événements, elle permet d'afficher une frise graphique.
+
+D'autres séries d'événement... Les boutons sur la gauche de la barre supérieur de l'écran d'accueil permettent :
++ : Créer une nouvelle série d'événements
+Enregistrer : sauvegarder la série courante
+Enregistrer sous... : Sauvegarder sous un nouvel identificateur
+Ouvrir : ouvrir une série déjà enregistrée.
+
+
+L'écran frise graphique. Toucher un événement affiche le commentaire correspondant.
+Le bouton Enregistrer en PDF permet d'enregistrer une image PDF de l'écran sous le nom défaut.pdf.
+Le bouton d'envoi sur la barre supérieure permet d'envoyer ce fichier par tous moyens (Airdrop, mail...)
+
+Les fichiers d'événement et les chronologies sont enregistrées au format JSON et récupérable par l'intermédiaire d'iTunes.
+
+
+
+</target>
+        <note>Class = "UITextView"; text = "Chronologies\n\nTimelines\n\nChronologies manages events and organizes them in chronologies. These timelines can be displayed as graphic friezes.\n \nI thank Clement C., the one of my former students who asked me to write this application and had the first idea! It is primarily for teachers and students who will be able to manipulate historical chronologies more easily and especially to represent it more easily.\n\nMain screen presents 3 lists.\n\n- On the right, the list of events. They are arranged in chronological order.\n- On the left, the list of chronologies\n- in the center, the current chronology under construction.\n\nEvents -&gt; Create Event: Create a new event. By default, an event is punctual. If it has a duration, fill in the end date. An event must have at least one title.\n\nA selected event can be destroyed, edited or dragged into a timeline if a timeline is selected in the central list\n\nChronologies -&gt; Create: Create a timeline. Timeline must have a title.\nA selected timeline is detailed in the central list. If it contains events, it displays a graphic frieze.\n\nOther series of events ... Buttons on the left of the top bar of the home screen allow:\n+ : Create  new series of events\nSave: save the current series\nSave as: Save as a new identifier\nOpen: open an already recorded series.\n\n\n\nThe graphic frieze screen. Touching an event displays the corresponding comment.\n\nThe \"save to PDF\" button saves a PDF image of the screen under the name \"default.pdf\".\n\nThe send button on the top bar allows to send PDF image file by any means (Airdrop, mail ...)\n\nEvent files and timelines are saved in JSON format and can be retrieved through iTunes.\n\n"; ObjectID = "6kM-hT-eLa";</note>
+      </trans-unit>
+      <trans-unit id="89n-UP-SZZ.text">
+        <source>Year</source>
+        <target>Année</target>
+        <note>Class = "UILabel"; text = "Year"; ObjectID = "89n-UP-SZZ";</note>
+      </trans-unit>
+      <trans-unit id="Ahy-x6-hR8.text">
+        <source>Chronologies</source>
+        <target>Chronologies</target>
+        <note>Class = "UILabel"; text = "Chronologies"; ObjectID = "Ahy-x6-hR8";</note>
+      </trans-unit>
+      <trans-unit id="CET-Bn-OIj.normalTitle">
+        <source>Create</source>
+        <target>Créer</target>
+        <note>Class = "UIButton"; normalTitle = "Create"; ObjectID = "CET-Bn-OIj";</note>
+      </trans-unit>
+      <trans-unit id="Fyl-yY-sNa.normalTitle">
+        <source>Save</source>
+        <target>Enregistrer</target>
+        <note>Class = "UIButton"; normalTitle = "Save"; ObjectID = "Fyl-yY-sNa";</note>
+      </trans-unit>
+      <trans-unit id="HMQ-km-AWY.text">
+        <source>Title</source>
+        <target>Title</target>
+        <note>Class = "UILabel"; text = "Title"; ObjectID = "HMQ-km-AWY";</note>
+      </trans-unit>
+      <trans-unit id="HSq-P9-p8V.text">
+        <source>Label</source>
+        <target>Label</target>
+        <note>Class = "UILabel"; text = "Label"; ObjectID = "HSq-P9-p8V";</note>
+      </trans-unit>
+      <trans-unit id="HlA-Tq-63P.placeholder">
+        <source>Title of event</source>
+        <target>Intitulé</target>
+        <note>Class = "UITextField"; placeholder = "Title of event"; ObjectID = "HlA-Tq-63P";</note>
+      </trans-unit>
+      <trans-unit id="JNl-z5-Ybg.text">
+        <source>Month</source>
+        <target>Mois</target>
+        <note>Class = "UILabel"; text = "Month"; ObjectID = "JNl-z5-Ybg";</note>
+      </trans-unit>
+      <trans-unit id="LvH-MR-6AJ.text">
+        <source>Chronologies</source>
+        <target>Chronologies</target>
+        <note>Class = "UILabel"; text = "Chronologies"; ObjectID = "LvH-MR-6AJ";</note>
+      </trans-unit>
+      <trans-unit id="MT6-5M-DZI.segmentTitles[0]">
+        <source>Begin</source>
+        <target>Début</target>
+        <note>Class = "UISegmentedControl"; MT6-5M-DZI.segmentTitles[0] = "Begin"; ObjectID = "MT6-5M-DZI";</note>
+      </trans-unit>
+      <trans-unit id="MT6-5M-DZI.segmentTitles[1]">
+        <source>End</source>
+        <target>Fin</target>
+        <note>Class = "UISegmentedControl"; MT6-5M-DZI.segmentTitles[1] = "End"; ObjectID = "MT6-5M-DZI";</note>
+      </trans-unit>
+      <trans-unit id="Mcq-kQ-ItF.normalTitle">
+        <source>Observe timeline</source>
+        <target>Voir frise</target>
+        <note>Class = "UIButton"; normalTitle = "Observe timeline"; ObjectID = "Mcq-kQ-ItF";</note>
+      </trans-unit>
+      <trans-unit id="Muh-jx-sKs.text">
+        <source>Commentaire</source>
+        <target>Commentaire</target>
+        <note>Class = "UITextView"; text = "Commentaire"; ObjectID = "Muh-jx-sKs";</note>
+      </trans-unit>
+      <trans-unit id="OuW-Zd-IiU.text">
+        <source>Label</source>
+        <target>Label</target>
+        <note>Class = "UILabel"; text = "Label"; ObjectID = "OuW-Zd-IiU";</note>
+      </trans-unit>
+      <trans-unit id="Pek-lj-9u3.text">
+        <source>Events</source>
+        <target>Evenement</target>
+        <note>Class = "UILabel"; text = "Events"; ObjectID = "Pek-lj-9u3";</note>
+      </trans-unit>
+      <trans-unit id="QPM-sb-i5P.text">
+        <source>Label</source>
+        <target>Label</target>
+        <note>Class = "UILabel"; text = "Label"; ObjectID = "QPM-sb-i5P";</note>
+      </trans-unit>
+      <trans-unit id="Qe1-ux-sIK.text">
+        <source>Timeline : event handler</source>
+        <target>Chronologie : gestion des événements</target>
+        <note>Class = "UILabel"; text = "Timeline : event handler"; ObjectID = "Qe1-ux-sIK";</note>
+      </trans-unit>
+      <trans-unit id="RLQ-TY-QmL.normalTitle">
+        <source>edit</source>
+        <target>editer</target>
+        <note>Class = "UIButton"; normalTitle = "edit"; ObjectID = "RLQ-TY-QmL";</note>
+      </trans-unit>
+      <trans-unit id="UDR-6B-hTg.normalTitle">
+        <source>Cancel</source>
+        <target>Annuler</target>
+        <note>Class = "UIButton"; normalTitle = "Cancel"; ObjectID = "UDR-6B-hTg";</note>
+      </trans-unit>
+      <trans-unit id="V51-7Y-3nE.text">
+        <source>Subtitle</source>
+        <target>Subtitle</target>
+        <note>Class = "UILabel"; text = "Subtitle"; ObjectID = "V51-7Y-3nE";</note>
+      </trans-unit>
+      <trans-unit id="aMJ-VH-eRm.text">
+        <source>Title</source>
+        <target>Title</target>
+        <note>Class = "UILabel"; text = "Title"; ObjectID = "aMJ-VH-eRm";</note>
+      </trans-unit>
+      <trans-unit id="ahW-Li-yVL.text">
+        <source>Titre de la frise courante</source>
+        <target>Titre de la frise courante</target>
+        <note>Class = "UILabel"; text = "Titre de la frise courante"; ObjectID = "ahW-Li-yVL";</note>
+      </trans-unit>
+      <trans-unit id="brl-gV-HRJ.text">
+        <source>Select or create timeline</source>
+        <target>Choisir ou créer chronologie</target>
+        <note>Class = "UILabel"; text = "Select or create timeline"; ObjectID = "brl-gV-HRJ";</note>
+      </trans-unit>
+      <trans-unit id="cXz-Gp-bcY.text">
+        <source>Label</source>
+        <target>Label</target>
+        <note>Class = "UILabel"; text = "Label"; ObjectID = "cXz-Gp-bcY";</note>
+      </trans-unit>
+      <trans-unit id="f8M-nF-bLb.title">
+        <source>Save as...</source>
+        <target>Enregistrer sous...</target>
+        <note>Class = "UIBarButtonItem"; title = "Save as..."; ObjectID = "f8M-nF-bLb";</note>
+      </trans-unit>
+      <trans-unit id="fCs-MW-J5C.title">
+        <source>Item</source>
+        <target>Item</target>
+        <note>Class = "UIBarButtonItem"; title = "Item"; ObjectID = "fCs-MW-J5C";</note>
+      </trans-unit>
+      <trans-unit id="hfD-UE-WHQ.text">
+        <source>Current chronology</source>
+        <target>Chronologie courante</target>
+        <note>Class = "UILabel"; text = "Current chronology"; ObjectID = "hfD-UE-WHQ";</note>
+      </trans-unit>
+      <trans-unit id="iJZ-bp-Vm9.normalTitle">
+        <source>Create event</source>
+        <target>Créer événement</target>
+        <note>Class = "UIButton"; normalTitle = "Create event"; ObjectID = "iJZ-bp-Vm9";</note>
+      </trans-unit>
+      <trans-unit id="jTF-iD-vcp.text">
+        <source>Subtitle</source>
+        <target>Subtitle</target>
+        <note>Class = "UILabel"; text = "Subtitle"; ObjectID = "jTF-iD-vcp";</note>
+      </trans-unit>
+      <trans-unit id="kmT-LO-hdY.placeholder">
+        <source>titre</source>
+        <target>titre</target>
+        <note>Class = "UITextField"; placeholder = "titre"; ObjectID = "kmT-LO-hdY";</note>
+      </trans-unit>
+      <trans-unit id="loJ-Je-yTE.text">
+        <source>Title</source>
+        <target>Title</target>
+        <note>Class = "UILabel"; text = "Title"; ObjectID = "loJ-Je-yTE";</note>
+      </trans-unit>
+      <trans-unit id="oXu-BY-RFj.text">
+        <source>Label</source>
+        <target>Label</target>
+        <note>Class = "UILabel"; text = "Label"; ObjectID = "oXu-BY-RFj";</note>
+      </trans-unit>
+      <trans-unit id="osB-ou-s9H.text">
+        <source>Label</source>
+        <target>Label</target>
+        <note>Class = "UILabel"; text = "Label"; ObjectID = "osB-ou-s9H";</note>
+      </trans-unit>
+      <trans-unit id="ruB-rI-usb.text">
+        <source>Label</source>
+        <target>Label</target>
+        <note>Class = "UILabel"; text = "Label"; ObjectID = "ruB-rI-usb";</note>
+      </trans-unit>
+      <trans-unit id="s6t-Df-2WY.text">
+        <source>Label</source>
+        <target>Label</target>
+        <note>Class = "UILabel"; text = "Label"; ObjectID = "s6t-Df-2WY";</note>
+      </trans-unit>
+      <trans-unit id="s9E-Qw-lmA.title">
+        <source>Open...</source>
+        <target>Ouvrir...</target>
+        <note>Class = "UIBarButtonItem"; title = "Open..."; ObjectID = "s9E-Qw-lmA";</note>
+      </trans-unit>
+      <trans-unit id="tQy-NU-Rkr.normalTitle">
+        <source>Save to PDF</source>
+        <target>Enregistrer en PDF</target>
+        <note>Class = "UIButton"; normalTitle = "Save to PDF"; ObjectID = "tQy-NU-Rkr";</note>
+      </trans-unit>
+      <trans-unit id="tpU-pO-7ag.normalTitle">
+        <source>Done</source>
+        <target>Annuler</target>
+        <note>Class = "UIButton"; normalTitle = "Done"; ObjectID = "tpU-pO-7ag";</note>
+      </trans-unit>
+      <trans-unit id="vnI-1F-D4o.text">
+        <source>Subtitle</source>
+        <target>Subtitle</target>
+        <note>Class = "UILabel"; text = "Subtitle"; ObjectID = "vnI-1F-D4o";</note>
+      </trans-unit>
+      <trans-unit id="yZv-Cb-qR4.text">
+        <source>Event Date : </source>
+        <target>Event Date : </target>
+        <note>Class = "UILabel"; text = "Event Date : "; ObjectID = "yZv-Cb-qR4";</note>
+      </trans-unit>
+      <trans-unit id="zan-RJ-qLW.text">
+        <source>Title</source>
+        <target>Title</target>
+        <note>Class = "UILabel"; text = "Title"; ObjectID = "zan-RJ-qLW";</note>
+      </trans-unit>
+      <trans-unit id="zc7-DR-RkP.text">
+        <source>                           </source>
+        <target>                           </target>
+        <note>Class = "UILabel"; text = "                           "; ObjectID = "zc7-DR-RkP";</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

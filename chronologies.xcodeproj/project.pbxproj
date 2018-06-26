@@ -31,6 +31,7 @@
 		2ABCE28620889A47007A6DE8 /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ABCE28520889A47007A6DE8 /* HelpViewController.swift */; };
 		2AC809FC20952DE3001B4C4E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2AC809FA20952DE3001B4C4E /* InfoPlist.strings */; };
 		2AC809FF20952DE3001B4C4E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2AC809FD20952DE3001B4C4E /* Localizable.strings */; };
+		2AE4737920E0CF2200491E09 /* Alerte.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AE4737820E0CF2200491E09 /* Alerte.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,6 +69,7 @@
 		2A9D4413202B4266004EFD4F /* VueEvenements.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VueEvenements.swift; sourceTree = "<group>"; };
 		2ABCE283208660B8007A6DE8 /* PopListFileTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopListFileTableViewController.swift; sourceTree = "<group>"; };
 		2ABCE28520889A47007A6DE8 /* HelpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
+		2AE4737820E0CF2200491E09 /* Alerte.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alerte.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +132,7 @@
 			children = (
 				2A9D4402202B41B4004EFD4F /* GestionChronologie.swift */,
 				2A9D4404202B41BD004EFD4F /* Evenement.swift */,
+				2AE4737820E0CF2200491E09 /* Alerte.swift */,
 				2A9D4406202B41C6004EFD4F /* Chronologie.swift */,
 			);
 			path = modele;
@@ -249,6 +252,7 @@
 				2A15F79B204DE88100E8AFD3 /* PostItViewController.swift in Sources */,
 				2A9D4409202B41E5004EFD4F /* FriseViewController.swift in Sources */,
 				2A9D4405202B41BD004EFD4F /* Evenement.swift in Sources */,
+				2AE4737920E0CF2200491E09 /* Alerte.swift in Sources */,
 				2ABCE284208660B8007A6DE8 /* PopListFileTableViewController.swift in Sources */,
 				2ABCE28620889A47007A6DE8 /* HelpViewController.swift in Sources */,
 				2A15476D202A4B6B006F15B4 /* AppDelegate.swift in Sources */,

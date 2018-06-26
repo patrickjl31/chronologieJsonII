@@ -329,6 +329,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                 //let uneFrise = Chronologie(intitule: leTitre, typeLongTerme: true, mesEvenements: [])
                 chronos.lesChronologies[chronos.indexChronoCourante].intitule = leTitre
                 friseTableView.reloadData()
+                // On modifie dans la table courante
+                currentFriseTitle.text = leTitre
+                currentTableView.reloadData()
                 
             }
         }
@@ -338,11 +341,17 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         if let leTitre = ui_titreFrise.text {
             if leTitre.count > 0 {
                 //let uneFrise = Chronologie(intitule: leTitre, typeLongTerme: true, mesEvenements: [])
-                chronos.addChronologie(nom: leTitre, longterme: true)
+                let res = chronos.addChronologie(nom: leTitre, longterme: true)
+                if res.count > 0 {
+                    Alerte.shared.erreur(message: res, controller: self)
+                }
                 friseTableView.reloadData()
                 
+            }else {
+                let mes = NSLocalizedString("Give title for your timeline", comment: "Donnez un nom pour la frise")
+                Alerte.shared.erreur(message: mes, controller: self)
             }
-        }
+        } 
     }
     
     
@@ -465,8 +474,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         if tableView == self.eventTableView {
             //index = indexPath.row
             indexTable[2] = -1  //typeTables.evenement.rawValue
-            //observeButton.isHidden = true
-            //copyToFriseButton.isHidden = true
+            observeButton.isHidden = true
+            copyToFriseButton.isHidden = true
         }
         //tableView.deselectRow(at: indexPath, animated: false)
         //print("Déselection de \(indexTable)")
@@ -499,7 +508,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         if tableView == self.eventTableView {
             index = indexPath.row
             indexTable[2] = indexPath.row
-            //observeButton.isHidden = false
+            observeButton.isHidden = false
             if chronos.indexChronoCourante > -1 {
                 copyToFriseButton.isHidden = false
             } else {
@@ -526,11 +535,17 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         let index = indexPath.row
         if tableView == self.friseTableView {
             if editingStyle == .delete {
+                // Si cette chronologie est la chrono courante, on met la chrono courante à nil
+                if index == chronos.indexChronoCourante {
+                    indexTable[1] = -1
+                    currentFriseTitle.text = ""
+                    
+                }
                 // On delete dans la table
-                //let badChrono = GlobalVariables.listeChronologie[index]
-                
+                chronos.deleteChronologie(laChrono: chronos.lesChronologies[index])
                 //GlobalVariables.listeChronologie.remove(at: index)
                 self.friseTableView.reloadData()
+                currentTableView.reloadData()
             }
             
         }
@@ -559,9 +574,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                 // On delete dans l'instance de la classe
                 chronos.deleteEvent(evt: eventToKill)
                 self.eventTableView.reloadData()
-                // On cache les boutons de la colone
+                // On cache les boutons de la colonne
                 copyToFriseButton.isHidden = true
-                observeButton.isHidden = true
+                observeButton.isHidden = false
                 self.friseTableView.reloadData()
                 self.currentTableView.reloadData()
             }
@@ -579,7 +594,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
-        //print("move")
+        //print("move : \(sourceIndexPath.row)")
         if indexTable[2] > -1 {
             //modify... on permet la sauvegarde
             flagPermitSaveNouvelEvenement = false
@@ -600,7 +615,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             vc.unEvent = evenemenATransferer
             vc.instanceOfViewController = self
             //if indexTable[2] >
-            eventTableView.reloadData()
+            //eventTableView.reloadData()
+            //chronos.chronoCourante = chronos.lesChronologies[chronos.indexChronoCourante]
+            //currentTableView.reloadData()
         }
         if segue.identifier == "voirFrise"{
             let vc = segue.destination as! FriseViewController

@@ -144,7 +144,7 @@ class GestionChronologie: NSObject {
         }
         return trouve
     }
-    func addChronologie(nom:String, longterme:Bool)  {
+    func addChronologie(nom:String, longterme:Bool)->String  {
         if nom != "" {
             let dejaLa = searchChronologie(titre: nom)
             if dejaLa < 0 {
@@ -155,9 +155,23 @@ class GestionChronologie: NSObject {
                 lesChronologies.append(newChrono)
                 //lesChronologies.sort(by: {$0.intitule < $1.intitule})
                 saveChronologies(inFile: "")
+                return ""
+            } else {
+                return NSLocalizedString("This title exist", comment: "Ce nom existe déjà")
+            }
+        }
+        return NSLocalizedString("Give title for your timeline", comment: "Donnez un nom pour la frise")
+    }
+    
+    func deleteChronologie(laChrono:Chronologie) {
+        if let index = lesChronologies.index(of: laChrono) {
+            if index == indexChronoCourante {
+                indexChronoCourante = -1
+                lesChronologies.remove(at: index)
             }
         }
     }
+    
     
     func addEventToChronologie(unEvenement:Evenement, chrono:Chronologie) ->Chronologie {
         //A vérifier...
