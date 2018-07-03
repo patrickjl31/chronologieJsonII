@@ -46,14 +46,6 @@
 		2A15F79A204DE88100E8AFD3 /* PostItViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostItViewController.swift; sourceTree = "<group>"; };
 		2A15F79C204E861300E8AFD3 /* EvenementBoxViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EvenementBoxViewController.swift; sourceTree = "<group>"; };
 		2A2CF8C52095D0A6003941C6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		2A2D599C20BC424A008F2F47 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
-		2A2D599D20BC424A008F2F47 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
-		2A2D599E20BC424A008F2F47 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
-		2A2D599F20BC424A008F2F47 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		2A2D59A220BC427F008F2F47 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Main.strings; sourceTree = "<group>"; };
-		2A2D59A320BC427F008F2F47 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
-		2A2D59A420BC427F008F2F47 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
-		2A2D59A520BC427F008F2F47 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		2A6D1469205272D8001BA1BD /* orange-inv.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "orange-inv.jpg"; sourceTree = "<group>"; };
 		2A6D146B205272E0001BA1BD /* orange.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = orange.jpg; sourceTree = "<group>"; };
 		2A9871862095B94F00EB4AA1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -67,6 +59,10 @@
 		2A9D440E202B4227004EFD4F /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		2A9D4410202B4245004EFD4F /* EvenementBoxView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EvenementBoxView.swift; sourceTree = "<group>"; };
 		2A9D4413202B4266004EFD4F /* VueEvenements.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VueEvenements.swift; sourceTree = "<group>"; };
+		2AB2DA1E20EA71400019E24A /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Main.strings; sourceTree = "<group>"; };
+		2AB2DA1F20EA71400019E24A /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		2AB2DA2020EA71400019E24A /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		2AB2DA2120EA71400019E24A /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		2ABCE283208660B8007A6DE8 /* PopListFileTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopListFileTableViewController.swift; sourceTree = "<group>"; };
 		2ABCE28520889A47007A6DE8 /* HelpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
 		2AE4737820E0CF2200491E09 /* Alerte.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alerte.swift; sourceTree = "<group>"; };
@@ -269,8 +265,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				2A154771202A4B6B006F15B4 /* Base */,
-				2A2D599C20BC424A008F2F47 /* en */,
-				2A2D59A220BC427F008F2F47 /* fr */,
+				2AB2DA1E20EA71400019E24A /* fr */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -279,8 +274,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				2A2CF8C52095D0A6003941C6 /* Base */,
-				2A2D599D20BC424A008F2F47 /* en */,
-				2A2D59A320BC427F008F2F47 /* fr */,
+				2AB2DA1F20EA71400019E24A /* fr */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -289,8 +283,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				2A9871872095C51100EB4AA1 /* Base */,
-				2A2D599F20BC424A008F2F47 /* en */,
-				2A2D59A520BC427F008F2F47 /* fr */,
+				2AB2DA2120EA71400019E24A /* fr */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -299,8 +292,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				2A9871862095B94F00EB4AA1 /* Base */,
-				2A2D599E20BC424A008F2F47 /* en */,
-				2A2D59A420BC427F008F2F47 /* fr */,
+				2AB2DA2020EA71400019E24A /* fr */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";

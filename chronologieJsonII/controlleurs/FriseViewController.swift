@@ -58,7 +58,7 @@ class FriseViewController: UIViewController {
             let monPath = createPdfFromView(aView: self.view, saveToDocumentsWithFileName: "default.pdf")
         }
  */
-        let monPath = createPdfFromView(aView: self.view, saveToDocumentsWithFileName: "actualtimeline.pdf")
+        let _ = createPdfFromView(aView: self.view, saveToDocumentsWithFileName: "actualtimeline.pdf")
         let url = NSURL(fileURLWithPath: path)
         let controller = UIActivityViewController(activityItems: [url], applicationActivities: nil)
         controller.popoverPresentationController?.sourceView = self.view
@@ -117,7 +117,7 @@ class FriseViewController: UIViewController {
         // On cache le bouton
         saveToPdfButton.isHidden = true
         // On sauve
-        let monPath = createPdfFromView(aView: self.view, saveToDocumentsWithFileName: "default.pdf")
+        let _ = createPdfFromView(aView: self.view, saveToDocumentsWithFileName: "default.pdf")
         // On rend le bouton à nouveau visible
         saveToPdfButton.isHidden = false
     }

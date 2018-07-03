@@ -94,7 +94,8 @@ class GestionChronologie: NSObject {
     
     // Si l'événement n'existe pas, on l'enregistre et on sauve la base
     func addEvent(unEvent:Evenement)->Bool {
-        if let dejaLa = searchTitreEvent(titre: unEvent.intitule, inListEvents: lesEvenements) {
+        if searchTitreEvent(titre: unEvent.intitule, inListEvents: lesEvenements) != nil {
+            //let dejaLa = searchTitreEvent(titre: unEvent.intitule, inListEvents: lesEvenements)
             return false
         } else {
             lesEvenements.append(unEvent)
@@ -177,7 +178,8 @@ class GestionChronologie: NSObject {
         //A vérifier...
         // Il ne modifie pas l'objet passé mais renvoie une copie modifiée
         // Voir s'il ne faut pas modifier le tableau de chronologies
-        if let evt = searchTitreEvent(titre: unEvenement.intitule, inListEvents: chrono.mesEvenements){
+        if searchTitreEvent(titre: unEvenement.intitule, inListEvents: chrono.mesEvenements) != nil{
+            //let evt = searchTitreEvent(titre: unEvenement.intitule, inListEvents: chrono.mesEvenements)
             return chrono
         }
         var nouvelleChrono = Chronologie()

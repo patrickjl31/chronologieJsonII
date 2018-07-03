@@ -325,7 +325,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
    
     @IBAction func modifierFriseButton(_ sender: Any) {
         if let leTitre = ui_titreFrise.text {
-            if leTitre.count > 0, let laChrono = chronos.chronoCourante {
+            if leTitre.count > 0, chronos.indexChronoCourante > -1 {
+                //let laChrono = chronos.chronoCourante
                 //let uneFrise = Chronologie(intitule: leTitre, typeLongTerme: true, mesEvenements: [])
                 chronos.lesChronologies[chronos.indexChronoCourante].intitule = leTitre
                 friseTableView.reloadData()

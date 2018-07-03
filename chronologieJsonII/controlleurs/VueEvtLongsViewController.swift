@@ -190,7 +190,7 @@ class VueEvtLongsViewController: UIViewController, UIPopoverPresentationControll
         
         if  nombreEvenements > tailleEvenementViewsFree {
             
-            for i in tailleEvenementViewsFree ..< nombreEvenements {
+            for _ in tailleEvenementViewsFree ..< nombreEvenements {
                 let nouvelleVue = LongPeriodBoxView(frame: CGRect(x: 0, y: 0, width: 100, height: H_EVT))
                 //let nouvelleVue = EvenementBoxViewController()
                 //On crée une gesture
