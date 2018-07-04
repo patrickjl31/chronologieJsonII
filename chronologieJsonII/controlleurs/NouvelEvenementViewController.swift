@@ -196,7 +196,8 @@ class NouvelEvenementViewController: UIViewController, UITextFieldDelegate {
         if dateTested != nil {
             laDate = dateTested!
             ui_DatePicker.setDate(laDate, animated: true)
-            ui_Date.text = NSLocalizedString("Date :", comment: "Date de l'événement : ") + dateFormatter.string(from: laDate)
+            ui_Date.text = dateFormatter.string(from: laDate)
+            //ui_Date.text = NSLocalizedString("Date :", comment: "Date de l'événement : ") + dateFormatter.string(from: laDate)
         }
         
     }

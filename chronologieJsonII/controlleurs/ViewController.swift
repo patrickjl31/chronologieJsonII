@@ -444,7 +444,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             let saDateDeb = dateFormatter.string(from: unEvenement.dateDeb)
             var saDateFin = "."
             if !unEvenement.ponctuel {
-                saDateFin = " to " + dateFormatter.string(from: unEvenement.dateFin)
+                let motTo = NSLocalizedString("to", comment: "to")
+                saDateFin = " " + motTo + " " + dateFormatter.string(from: unEvenement.dateFin)
             }
             cell!.detailTextLabel?.text = "\(saDateDeb)" + "\(saDateFin)"
             
