@@ -533,6 +533,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         return true
     }
     
+    func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
+        return false
+    }
+    
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         let index = indexPath.row
         if tableView == self.friseTableView {
@@ -546,8 +550,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                 // On delete dans la table
                 chronos.deleteChronologie(laChrono: chronos.lesChronologies[index])
                 //GlobalVariables.listeChronologie.remove(at: index)
-                self.friseTableView.reloadData()
+                //self.friseTableView.reloadData()
+                friseTableView.deleteRows(at: [indexPath], with: .automatic)
                 currentTableView.reloadData()
+                //currentTableView.deleteRows(at: [indexPath], with: .automatic)
             }
             
         }
@@ -565,7 +571,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                 
                 //GlobalVariables.listeEvenements.remove(at: index)
                 self.friseTableView.reloadData()
-                self.currentTableView.reloadData()
+                //self.currentTableView.reloadData()
+                currentTableView.deleteRows(at: [indexPath], with: .automatic)
             }
             
         }
@@ -575,13 +582,16 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                 let eventToKill = chronos.lesEvenements[index]
                 // On delete dans l'instance de la classe
                 chronos.deleteEvent(evt: eventToKill)
-                self.eventTableView.reloadData()
+                //self.eventTableView.reloadData()
+                eventTableView.deleteRows(at: [indexPath], with: .automatic)
                 // On cache les boutons de la colonne
                 copyToFriseButton.isHidden = true
                 observeButton.isHidden = false
                 self.friseTableView.reloadData()
                 self.currentTableView.reloadData()
+                //currentTableView.deleteRows(at: [indexPath], with: .automatic)
             }
+            /*
             if editingStyle == .insert {
                 // Show nouvel evenement
                 flagPermitSaveNouvelEvenement = false
@@ -590,7 +600,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                 // on crée l'événement à informer
                 evenemenATransferer = Evenement()
             }
-            
+            */
         }
         //print("\(indexTable)")
     }
@@ -605,6 +615,27 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             // On utilise la segue de newevent
             performSegue(withIdentifier: "newEvent", sender: self)
         }
+    }
+    
+    func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath) {
+        /*
+        print ("Touche :")
+        if indexTable[2] > -1 {
+            //modify... on permet la sauvegarde
+            flagPermitSaveNouvelEvenement = true
+            evenemenATransferer =
+                chronos.lesEvenements[indexTable[2]]
+            //evenemenATransferer =
+                chronos.lesEvenements[indexPath.row]
+            // On utilise la segue de newevent
+            performSegue(withIdentifier: "newEvent", sender: nil)
+        }
+ */
+        flagPermitSaveNouvelEvenement = true
+        evenemenATransferer =
+            chronos.lesEvenements[indexPath.row]
+        // On utilise la segue de newevent
+        performSegue(withIdentifier: "newEvent", sender: nil)
     }
     
     // Prepare for segue

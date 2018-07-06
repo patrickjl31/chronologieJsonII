@@ -74,12 +74,15 @@ class GestionChronologie: NSObject {
     //--- A enrichir avec les paramètres evenementPonctuel et espaceSeculaire
     func createNewEvent() -> Evenement {
         let unEvenement = Evenement()
+        // suite inutile
+        /*
         unEvenement.intitule = ""
         unEvenement.commentaire = ""
         unEvenement.dateDeb = Date()
         unEvenement.dateFin = Date()
         unEvenement.ponctuel = true
         unEvenement.typeLongTerme = true
+ */
         return unEvenement
     }
     
