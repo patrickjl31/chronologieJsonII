@@ -46,10 +46,11 @@ D'autres séries d'événement... Les boutons sur la gauche de la barre supérie
 Enregistrer : sauvegarder la série courante
 Enregistrer sous... : Sauvegarder sous un nouvel identificateur
 Ouvrir : ouvrir une série déjà enregistrée.
+Export... : exporter la série courant.
 
 
 L'écran Frise Graphique. Toucher un événement affiche le commentaire correspondant.
-Le bouton 'Enregistrer en PDF' permet d'enregistrer une image PDF de l'écran sous le nom 'défaut.pdf'.
+Le bouton 'Enregistrer en PDF' permet d'enregistrer une image PDF de l'écran sous le nom 'default.pdf'.
 Le bouton d'envoi sur la barre supérieure permet d'envoyer ce fichier par tous moyens (Airdrop, mail...)
 
 Les fichiers d'événement et les chronologies sont enregistrées au format JSON et récupérable par l'intermédiaire d'iTunes.
@@ -84,9 +85,9 @@ A selected timeline is detailed in the central list. If it contains events, it d
 Other series of events ... Buttons on the left of the top bar of the home screen allow:
 + : Create  new series of events
 Save: save the current series
-Save as: Save as a new identifier
-Open: open an already recorded series.
-
+Save as...: Save as a new identifier
+Open...: open an already recorded series.
+Export... : export currents events.
 
 
 The graphic frieze screen. Touching an event displays the corresponding comment.

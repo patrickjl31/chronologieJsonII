@@ -222,6 +222,7 @@ class NouvelEvenementViewController: UIViewController, UITextFieldDelegate {
             dateFin = dateDeb
         } 
         
+        // Un titre est nécessaire.
         if let titre = ui_titre.text{
             //let date = ui_Date.text
             //unEvent = Evenement()

@@ -181,7 +181,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         chronos.saveAllAs()
     }
     
-    @IBAction func fileSaveAs(_ sender: Any) {
+    @IBAction func fileSaveAs() {
         inputFileName()
         chronos.saveAllAs()
     }
@@ -194,6 +194,31 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         gererAffichage()
     }
     
+    // exporter les fichiers
+    
+    @IBAction func exportFiles(_ sender: Any) {
+        let nomFic = chronos.getCurrentFileName()
+        if nomFic.count == 0 {
+            fileSaveAs()
+            exportFiles(sender)
+        } else {
+            //let typeFile1 = "listchronos"
+            //let typeFile2 = "totalevents"
+            
+            let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
+            let path = paths[0] as String
+            let path1 = path + "/" + nomFic + "." + TYPE_FILE1 + "." + JSON
+            let path2 = path + "/" + nomFic + "." + TYPE_FILE2 + "." + JSON
+            //print(path1, path2)
+            let url1 = NSURL(fileURLWithPath: path1)
+            let url2 = NSURL(fileURLWithPath: path2)
+            let controller = UIActivityViewController(activityItems: [url1, url2], applicationActivities: nil)
+            controller.popoverPresentationController?.sourceView = self.view
+            self.present(controller, animated: true, completion: nil)
+        }
+    }
+   
+    //------------------------------
     // mise à jour des listes
     func rafraichirTables()  {
         friseTableView.reloadData()
@@ -398,7 +423,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             let uneChronologie = chronos.lesChronologies[indexPath.row]
             cell!.textLabel!.text = uneChronologie.intitule
             let taille = uneChronologie.mesEvenements.count
-            cell!.detailTextLabel?.text = "\(taille) événement(s)."
+            let eventText = NSLocalizedString("event", comment: "événement")
+            cell!.detailTextLabel?.text = "\(taille) \(eventText)(s)."
             
         }
         

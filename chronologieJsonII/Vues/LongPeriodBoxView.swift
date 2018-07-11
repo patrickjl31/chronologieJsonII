@@ -26,7 +26,7 @@ class LongPeriodBoxView: UIView {
     }
     
     func  addLabels()  {
-        self.backgroundColor = UIColor(red: 150 / 255, green: 210 / 255, blue: 210 / 255, alpha: 0.5)//UIColor.cyan.withAlphaComponent(0.5)
+        self.backgroundColor = UIColor(red: 200 / 255, green: 220 / 255, blue: 255 / 255, alpha: 1)//UIColor.cyan.withAlphaComponent(0.5)
         //backgroundColor = UIColor(red: 150, green: 210, blue: 210, alpha: 1)//UIColor.cyan.withAlphaComponent(0.5)
         self.layer.cornerRadius = CGFloat(5)
         self.layer.borderWidth = 1.0

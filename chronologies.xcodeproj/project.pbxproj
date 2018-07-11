@@ -14,6 +14,7 @@
 		2A15477F202A4BD6006F15B4 /* fleche2.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A15477E202A4BD6006F15B4 /* fleche2.png */; };
 		2A15F79B204DE88100E8AFD3 /* PostItViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A15F79A204DE88100E8AFD3 /* PostItViewController.swift */; };
 		2A15F79D204E861300E8AFD3 /* EvenementBoxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A15F79C204E861300E8AFD3 /* EvenementBoxViewController.swift */; };
+		2A28C78920F135570010255D /* constantes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A28C78820F135570010255D /* constantes.swift */; };
 		2A2CF8BF2095CA0B003941C6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A154770202A4B6B006F15B4 /* Main.storyboard */; };
 		2A2CF8C02095CA1A003941C6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A154775202A4B6B006F15B4 /* LaunchScreen.storyboard */; };
 		2A6D146A205272D8001BA1BD /* orange-inv.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2A6D1469205272D8001BA1BD /* orange-inv.jpg */; };
@@ -45,6 +46,7 @@
 		2A15477E202A4BD6006F15B4 /* fleche2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fleche2.png; sourceTree = "<group>"; };
 		2A15F79A204DE88100E8AFD3 /* PostItViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostItViewController.swift; sourceTree = "<group>"; };
 		2A15F79C204E861300E8AFD3 /* EvenementBoxViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EvenementBoxViewController.swift; sourceTree = "<group>"; };
+		2A28C78820F135570010255D /* constantes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = constantes.swift; sourceTree = "<group>"; };
 		2A2CF8C52095D0A6003941C6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2A6D1469205272D8001BA1BD /* orange-inv.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "orange-inv.jpg"; sourceTree = "<group>"; };
 		2A6D146B205272E0001BA1BD /* orange.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = orange.jpg; sourceTree = "<group>"; };
@@ -127,9 +129,10 @@
 			isa = PBXGroup;
 			children = (
 				2A9D4402202B41B4004EFD4F /* GestionChronologie.swift */,
+				2A28C78820F135570010255D /* constantes.swift */,
 				2A9D4404202B41BD004EFD4F /* Evenement.swift */,
-				2AE4737820E0CF2200491E09 /* Alerte.swift */,
 				2A9D4406202B41C6004EFD4F /* Chronologie.swift */,
+				2AE4737820E0CF2200491E09 /* Alerte.swift */,
 			);
 			path = modele;
 			sourceTree = "<group>";
@@ -245,6 +248,7 @@
 				2A9D440B202B41EC004EFD4F /* NouvelEvenementViewController.swift in Sources */,
 				2A9D440D202B41F4004EFD4F /* VueEvtPonctuelsViewController.swift in Sources */,
 				2A9D4407202B41C6004EFD4F /* Chronologie.swift in Sources */,
+				2A28C78920F135570010255D /* constantes.swift in Sources */,
 				2A15F79B204DE88100E8AFD3 /* PostItViewController.swift in Sources */,
 				2A9D4409202B41E5004EFD4F /* FriseViewController.swift in Sources */,
 				2A9D4405202B41BD004EFD4F /* Evenement.swift in Sources */,
@@ -420,7 +424,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = LL9TBU2D9X;
 				INFOPLIST_FILE = chronologieJsonII/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = org.lanneau.chronologies;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -436,7 +440,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = LL9TBU2D9X;
 				INFOPLIST_FILE = chronologieJsonII/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = org.lanneau.chronologies;
 				PRODUCT_NAME = "$(TARGET_NAME)";
