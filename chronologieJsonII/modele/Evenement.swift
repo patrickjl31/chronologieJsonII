@@ -21,5 +21,14 @@ class Evenement: Codable, Equatable {
     var dateFin:Date = Date()
     var ponctuel:Bool = true
     var typeLongTerme:Bool = true
+    
+    func setValues(titre : String, comment:String, dDeb:Date, dFin:Date, ponct:Bool, lgTerme:Bool) {
+        self.intitule = titre
+        self.commentaire = comment
+        self.dateDeb = dDeb
+        self.dateFin = dFin
+        self.ponctuel = ponct
+        self.typeLongTerme = lgTerme
+    }
 
 }

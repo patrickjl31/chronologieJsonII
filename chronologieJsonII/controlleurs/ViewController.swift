@@ -27,7 +27,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     @IBOutlet weak var voirFiseButton: UIButton!
     
     @IBOutlet weak var copyToFriseButton: UIButton!
-    @IBOutlet weak var observeButton: UIButton!
+    //@IBOutlet weak var observeButton: UIButton!
     
     // Les objets qui serviront au transfert de données vers les autres pages
     // le flag qui permet d'ouvrir nouvelEnregistrementController en lecture seule ou écriture
@@ -73,31 +73,13 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         // On gère les apprences des boutons
         gererAffichage()
-        /*
-        observeButton.isHidden = true
-        copyToFriseButton.isHidden = true
-        voirFiseButton.isHidden = true
-        modifyFrise.isHidden = true
-        // et des labels
-        currentFriseTitle.text = ""
-        */
+        
         
     }
     
     override func viewDidAppear(_ animated: Bool) {
         rafraichirTables()
-        /*
-        // On gère les apprences des boutons
-        //observeButton.isHidden = true
-        copyToFriseButton.isHidden = true
-        //voirFiseButton.isHidden = true
-        modifyFrise.isHidden = true
-        // et des labels
-        //currentFriseTitle.text = ""
-        if chronos.indexChronoCourante > -1 {
-            print("\(chronos.lesChronologies[chronos.indexChronoCourante].intitule)")
-        }
-        */
+        
         gererAffichage()
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -141,14 +123,18 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             voirFiseButton.isHidden = true
         }
         //events
+        eventTableView.setEditing(false, animated: true)
+        /*
         if chronos.lesEvenements.count > 0 {
-            observeButton.isHidden = false
-            observeButton.setTitle("edit", for: .normal)
+            //observeButton.isHidden = false
+            //observeButton.setTitle("edit", for: .normal)
             eventTableView.setEditing(false, animated: true)
         } else {
-            observeButton.isHidden = true
+            //observeButton.isHidden = true
             eventTableView.setEditing(false, animated: true)
         }
+        */
+        
         copyToFriseButton.isHidden = true
         // Titre page
         let baseTitre = NSLocalizedString("Timeline", comment: "Chronologie")
@@ -282,9 +268,13 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         // On positionne l'index selectionné à -1
         indexTable[2] = -1
         // on crée l'événement à informer
-        evenemenATransferer = Evenement()
+        //evenemenATransferer = Evenement()
+        // On ne  transfère rien, on le créera si l'utilisateur enregistre
+        evenemenATransferer = nil
     }
     
+    //Inutile, supprimer aussi le bouton edit
+    /*
     @IBAction func observeEvent(_ sender: UIButton) {
         // Show evenement sans bouton save
         if sender.title(for: .normal) == "edit" {
@@ -295,19 +285,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             eventTableView.setEditing(false, animated: true)
         }
         
-        /*
-        if indexTable[2] > -1 {
-            //modify... on permet la sauvegarde
-            flagPermitSaveNouvelEvenement = true
-            evenemenATransferer =
-               chronos.lesEvenements[indexTable[2]]
-            // On utilise la segue de newevent
-            performSegue(withIdentifier: "newEvent", sender: sender)
-        }
- */
         
     }
-    
+    */
     @IBAction func addEventToFrise(_ sender: UIButton) {
         // Ajoute l'événement à la frise courante
         // quel est l'événement sélectionné ?
@@ -502,7 +482,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         if tableView == self.eventTableView {
             //index = indexPath.row
             indexTable[2] = -1  //typeTables.evenement.rawValue
-            observeButton.isHidden = true
+            //observeButton.isHidden = true
             copyToFriseButton.isHidden = true
         }
         //tableView.deselectRow(at: indexPath, animated: false)
@@ -536,7 +516,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         if tableView == self.eventTableView {
             index = indexPath.row
             indexTable[2] = indexPath.row
-            observeButton.isHidden = false
+            //observeButton.isHidden = false
             if chronos.indexChronoCourante > -1 {
                 copyToFriseButton.isHidden = false
             } else {
@@ -612,7 +592,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                 eventTableView.deleteRows(at: [indexPath], with: .automatic)
                 // On cache les boutons de la colonne
                 copyToFriseButton.isHidden = true
-                observeButton.isHidden = false
+                //observeButton.isHidden = false
                 self.friseTableView.reloadData()
                 self.currentTableView.reloadData()
                 //currentTableView.deleteRows(at: [indexPath], with: .automatic)
@@ -669,8 +649,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         if (segue.identifier == "newEvent") || (segue.identifier == "newEvent1"){
             let vc = segue.destination as! NouvelEvenementViewController
             vc.chronologies = chronos
-            vc.nouvelEvenementASauver = flagPermitSaveNouvelEvenement
-            vc.indexEvenement = indexTable[2]
+            //vc.nouvelEvenementASauver = flagPermitSaveNouvelEvenement
+            //vc.indexEvenement = indexTable[2]
             vc.unEvent = evenemenATransferer
             vc.instanceOfViewController = self
             //if indexTable[2] >

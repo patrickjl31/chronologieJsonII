@@ -72,20 +72,13 @@ class GestionChronologie: NSObject {
     //-----Gérer les événements----------
     
     //--- A enrichir avec les paramètres evenementPonctuel et espaceSeculaire
+    // Cette fonction semble inutile
     func createNewEvent() -> Evenement {
         let unEvenement = Evenement()
-        // suite inutile
-        /*
-        unEvenement.intitule = ""
-        unEvenement.commentaire = ""
-        unEvenement.dateDeb = Date()
-        unEvenement.dateFin = Date()
-        unEvenement.ponctuel = true
-        unEvenement.typeLongTerme = true
- */
+        
         return unEvenement
     }
-    
+   
     func searchTitreEvent(titre:String, inListEvents: [Evenement]) -> Evenement? {
         for evt in inListEvents {
             if evt.intitule == titre {
@@ -106,7 +99,7 @@ class GestionChronologie: NSObject {
             return true
         }
     }
-    
+    /*
     func modifyEvent(intitule:String, comment:String, debut:Date, fin:Date, longTerme: Bool, ponct:Bool) {
         if intitule != "" {
             // Tester si l'événement existe
@@ -122,7 +115,7 @@ class GestionChronologie: NSObject {
             }
         }
     }
-    
+    */
     func deleteEvent(evt:Evenement) {
         var trouve = -1
         for (index,value) in lesEvenements.enumerated(){

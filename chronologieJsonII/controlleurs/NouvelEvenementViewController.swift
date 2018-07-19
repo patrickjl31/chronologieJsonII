@@ -44,14 +44,15 @@ class NouvelEvenementViewController: UIViewController, UITextFieldDelegate {
     var laDate = Date()
     var dateDeb = Date(timeIntervalSince1970: 0)
     var dateFin = Date(timeIntervalSince1970: 0)
+    // remplacer deb et fin par un enum
     var datEnCours = "deb"
     var evtPonctuel = true
     
     
     // Les données globales envoyées par le viewController
     var chronologies:GestionChronologie?
-    var permitSaveValues:Bool = true
-    var indexEvenement:Int = -1
+    //var permitSaveValues:Bool = true
+    //var indexEvenement:Int = -1
     var unEvent:Evenement?
     var instanceOfViewController:ViewController!
     
@@ -64,6 +65,7 @@ class NouvelEvenementViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        /*
         if permitSaveValues {
             saveButton.isHidden = false
             cancelButton.isHidden = false
@@ -71,8 +73,9 @@ class NouvelEvenementViewController: UIViewController, UITextFieldDelegate {
         } else {
             saveButton.isHidden = true
             cancelButton.isHidden = true
-            //
+ 
         }
+ */
         /*
         ui_jour.delegate = self
         ui_an.delegate = self
@@ -82,23 +85,27 @@ class NouvelEvenementViewController: UIViewController, UITextFieldDelegate {
         datEnCours = "deb"
         
         // A-t-on passé un événement à afficher ?
-        if let emptyEvt = unEvent?.intitule.count {
-            if emptyEvt > 0 {
+        if let evtTransmit = unEvent {
                 nouvelEvenementASauver = false
-                ui_titre.text = unEvent?.intitule
-                ui_comment.text = unEvent?.commentaire
-                laDate = (unEvent?.dateDeb)!
-                dateDeb = (unEvent?.dateDeb)!
-                dateFin = (unEvent?.dateFin)!
+                ui_titre.text = evtTransmit.intitule
+                ui_comment.text = evtTransmit.commentaire
+                laDate = evtTransmit.dateDeb
+                dateDeb = evtTransmit.dateDeb
+                dateFin = evtTransmit.dateFin
                 updateDate()
             }
          else {
+            //a revoir
             nouvelEvenementASauver = true
-            ui_jour.text = "1"
-            ui_mois.text = "1"
-            ui_an.text = ""
+            ui_titre.text = ""
+            ui_comment.text = ""
+            // On met par défaut la date à aujourd'hui
+            laDate = Date()
+            dateDeb = Date()
+            dateFin = Date()
+            updateDate()
         }
-        }
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -126,15 +133,25 @@ class NouvelEvenementViewController: UIViewController, UITextFieldDelegate {
         // Si on enregistre une date de fin, l'evt n'est pas ponctuel..
         evtPonctuel = false
         
+        
         switch  sender.selectedSegmentIndex {
         case 0:
             // Début
             datEnCours = "deb"
+            laDate = dateDeb
         case 1:
             datEnCours = "fin"
+            laDate = dateFin
         default:
             datEnCours = "deb"
+            laDate = dateDeb
         }
+        
+       
+        
+        
+        
+        
         // On met à jour les champs textes
         updateDate()
     }
@@ -220,8 +237,33 @@ class NouvelEvenementViewController: UIViewController, UITextFieldDelegate {
         // si l'événement est ponctuel, on égalise des dates de début et de fin
         if evtPonctuel{
             dateFin = dateDeb
-        } 
+        }
         
+        // On vérifie la validité des données entrées
+        if let titre = ui_titre.text{
+            // Un titre est nécessaire.
+            if titre.count > 0 {
+                // Si on est en création d'événement, on le crée. Pour cette version, tous les evvenements sont à long terme
+                if let evtTransmis = unEvent {
+                    evtTransmis.setValues(titre: titre, comment: ui_comment.text, dDeb: dateDeb, dFin: dateFin, ponct: evtPonctuel, lgTerme: true)
+                } else {
+                    let nouvelEvt = Evenement()
+                    nouvelEvt.setValues(titre: titre, comment: ui_comment.text, dDeb: dateDeb, dFin: dateFin, ponct: evtPonctuel, lgTerme: true)
+                    if let maChrono = chronologies {
+                        maChrono.lesEvenements.append(nouvelEvt)
+                    }
+                }
+                // On trie
+                chronologies?.lesEvenements.sort(by: {$0.dateDeb < $1.dateDeb})
+                
+                // On enregistre
+                chronologies?.saveData(inFile: "")
+                // On recharge sur le viewController
+                instanceOfViewController.rafraichirTables()
+                
+            }
+        }
+        /*
         // Un titre est nécessaire.
         if let titre = ui_titre.text{
             //let date = ui_Date.text
@@ -249,7 +291,9 @@ class NouvelEvenementViewController: UIViewController, UITextFieldDelegate {
             dismiss(animated: true, completion: nil)
             //_ = navigationController?.popViewController(animated: true)
         }
-        
+     */
+        // On quitte
+        dismiss(animated: true, completion: nil)
     }
     
     // delegate des champs textes

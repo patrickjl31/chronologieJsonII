@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
@@ -230,7 +229,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="ezI-W1-zAQ">
-                                <rect key="frame" x="1054" y="165" width="274" height="30"/>
+                                <rect key="frame" x="1094.5" y="165" width="88" height="30"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iJZ-bp-Vm9">
                                         <rect key="frame" x="0.0" y="0.0" width="88" height="30"/>
@@ -240,13 +239,6 @@
                                             <segue destination="wvp-zR-gW2" kind="popoverPresentation" identifier="newEvent" popoverAnchorView="iJZ-bp-Vm9" id="6NE-jg-Bj8">
                                                 <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
                                             </segue>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RLQ-TY-QmL">
-                                        <rect key="frame" x="244" y="0.0" width="30" height="30"/>
-                                        <state key="normal" title="edit"/>
-                                        <connections>
-                                            <action selector="observeEvent:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bnT-qb-dvL"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -309,6 +301,7 @@
                             <constraint firstItem="zNY-fz-qt4" firstAttribute="width" secondItem="6Tk-OE-BBY" secondAttribute="width" multiplier="1:3" id="4G3-Qh-ZIh"/>
                             <constraint firstItem="Mcq-kQ-ItF" firstAttribute="leading" secondItem="0Jj-y4-9YU" secondAttribute="trailing" constant="30" id="5VF-7z-3mv"/>
                             <constraint firstItem="uxZ-Wf-We0" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="16" id="5tG-fB-3gE"/>
+                            <constraint firstItem="ezI-W1-zAQ" firstAttribute="centerX" secondItem="zNY-fz-qt4" secondAttribute="centerX" id="5xM-VY-uo0"/>
                             <constraint firstItem="0Jj-y4-9YU" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="6Nz-64-87f"/>
                             <constraint firstItem="zNY-fz-qt4" firstAttribute="leading" secondItem="2Pl-nH-sbS" secondAttribute="trailing" constant="16" id="6Vt-0b-Lq3"/>
                             <constraint firstItem="dRx-Hu-IYn" firstAttribute="leading" secondItem="0Jj-y4-9YU" secondAttribute="trailing" id="7Ce-52-gg9"/>
@@ -333,7 +326,6 @@
                             <constraint firstItem="Ahy-x6-hR8" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="70" id="bRy-V9-7Ap"/>
                             <constraint firstItem="zNY-fz-qt4" firstAttribute="leading" secondItem="dRx-Hu-IYn" secondAttribute="trailing" id="blc-wD-m4y"/>
                             <constraint firstAttribute="bottomMargin" secondItem="dRx-Hu-IYn" secondAttribute="bottom" id="coy-wE-FmZ"/>
-                            <constraint firstItem="zNY-fz-qt4" firstAttribute="trailingMargin" secondItem="ezI-W1-zAQ" secondAttribute="trailing" constant="30" id="doO-JU-AWj"/>
                             <constraint firstItem="dRx-Hu-IYn" firstAttribute="leading" secondItem="kmT-LO-hdY" secondAttribute="trailing" constant="5" id="e0O-9G-m6Y"/>
                             <constraint firstItem="4Z3-Nu-TWU" firstAttribute="top" secondItem="ezI-W1-zAQ" secondAttribute="bottom" constant="10" id="e4E-CV-ejJ"/>
                             <constraint firstItem="brl-gV-HRJ" firstAttribute="top" secondItem="Ahy-x6-hR8" secondAttribute="bottom" constant="10" id="eK4-bJ-h7N"/>
@@ -356,7 +348,6 @@
                             <constraint firstItem="Ahy-x6-hR8" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="5" id="qQs-F1-U5C"/>
                             <constraint firstItem="PPV-DD-YMu" firstAttribute="leading" secondItem="zNY-fz-qt4" secondAttribute="leading" constant="16" id="qrg-bh-tE8"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="PPV-DD-YMu" secondAttribute="bottom" constant="30" id="r9M-Ik-AQv"/>
-                            <constraint firstItem="ezI-W1-zAQ" firstAttribute="leading" secondItem="zNY-fz-qt4" secondAttribute="trailing" constant="-312" id="tes-LU-WyV"/>
                             <constraint firstItem="kmT-LO-hdY" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="5" id="tjx-n3-Uky"/>
                             <constraint firstItem="zNY-fz-qt4" firstAttribute="leading" secondItem="ahW-Li-yVL" secondAttribute="trailing" constant="30" id="uXh-Kj-9m0"/>
                             <constraint firstItem="dRx-Hu-IYn" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="xNc-tQ-oVA"/>
@@ -417,7 +408,6 @@
                         <outlet property="eventTableView" destination="PPV-DD-YMu" id="WBP-cx-vOa"/>
                         <outlet property="friseTableView" destination="uxZ-Wf-We0" id="xPX-Ci-eDM"/>
                         <outlet property="modifyFrise" destination="5z3-ah-dKF" id="WFX-FR-xon"/>
-                        <outlet property="observeButton" destination="RLQ-TY-QmL" id="ItF-X3-G5J"/>
                         <outlet property="ui_titreFrise" destination="kmT-LO-hdY" id="l3T-ye-oT6"/>
                         <outlet property="ui_titrePage" destination="Qe1-ux-sIK" id="HLE-U4-brq"/>
                         <outlet property="voirFiseButton" destination="Mcq-kQ-ItF" id="EMO-fD-GKZ"/>

@@ -18,6 +18,8 @@ struct Chronologie: Codable, Equatable {
     var typeLongTerme:Bool = true
     var mesEvenements:[Evenement] = []
     
-    
+    mutating func setTitle(titre:String){
+        self.intitule = titre
+    }
 
 }
